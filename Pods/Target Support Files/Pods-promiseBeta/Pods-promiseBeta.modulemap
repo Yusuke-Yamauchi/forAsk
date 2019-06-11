@@ -1,0 +1,6 @@
+framework module Pods_promiseBeta {
+  umbrella header "Pods-promiseBeta-umbrella.h"
+
+  export *
+  module * { export * }
+}

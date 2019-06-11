@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>640572414752-pl56saiq17jjqh4krsvhacmngp80gb7p.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.640572414752-pl56saiq17jjqh4krsvhacmngp80gb7p</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCKKBpAMLs7hEouYssa64-JGNcNQuZOWio</string>
+	<key>GCM_SENDER_ID</key>
+	<string>640572414752</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.jun-tique.promiseBeta</string>
+	<key>PROJECT_ID</key>
+	<string>promisebeta-aa295</string>
+	<key>STORAGE_BUCKET</key>
+	<string>promisebeta-aa295.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:640572414752:ios:070480a3f6776b03</string>
+	<key>DATABASE_URL</key>
+	<string>https://promisebeta-aa295.firebaseio.com</string>
+</dict>
+</plist>
