@@ -1,11 +1,3 @@
-                    //
-                    //  SignViewController.swift
-                    //  promiseBeta
-                    //
-                    //  Created by 潤田中 on 2019/06/12.
-                    //  Copyright © 2019 BCC. All rights reserved.
-                    //
-                    
                     import UIKit
                     
                     class SignViewController: UIViewController {

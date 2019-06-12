@@ -1,11 +1,3 @@
-//
-//  ListViewController.swift
-//  promiseBeta
-//
-//  Created by 潤田中 on 2019/06/12.
-//  Copyright © 2019 BCC. All rights reserved.
-//
-
 import UIKit
 
 class ListViewController: UIViewController {
@@ -28,8 +20,10 @@ class ListViewController: UIViewController {
     
     
     @IBAction func toTop(_ sender: Any) {
-        
         //画面遷移 最初に戻る！！！！！
+            
+        
+        
         self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
         
         
