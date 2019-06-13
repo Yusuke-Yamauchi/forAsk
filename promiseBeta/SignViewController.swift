@@ -6,8 +6,6 @@ class SignViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
     }
     
     
@@ -15,6 +13,10 @@ class SignViewController: UIViewController {
     
     
     @IBAction func backToTop(_ sender: Any) {
+        
+        
+        
+        
         
         //画面遷移 戻る！！！！！
         self.dismiss(animated: true, completion: nil)
