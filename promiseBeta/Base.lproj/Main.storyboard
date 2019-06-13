@@ -183,7 +183,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="miZ-jw-B2g">
-                                <rect key="frame" x="213" y="503" width="142" height="30"/>
+                                <rect key="frame" x="213" y="497" width="142" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="buton"/>
                                 <connections>
@@ -324,7 +324,7 @@
                     <viewLayoutGuide key="safeArea" id="8p0-yD-9qr"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="122" y="102"/>
+            <point key="canvasLocation" x="121.73913043478262" y="101.78571428571428"/>
         </scene>
         <!--Sign View Controller-->
         <scene sceneID="aNM-vc-IrZ">
