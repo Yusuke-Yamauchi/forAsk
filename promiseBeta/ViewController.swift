@@ -4,25 +4,20 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         
         //Promisedateの白にしてバックを不透明にする
-        //https://wayohoo.com/programming/swift/how-to-change-text-color-for-uidatepicker.html
+//        https://wayohoo.com/programming/swift/how-to-change-text-color-for-uidatepicker.html
         changePromiseDate.setValue(UIColor.white, forKey: "textColor")
 
         changePromiseDate.setValue(false, forKey: "highlightsToday")
         
         //duedateの白にしてバックを不透明にする
-        changePromiseDate.setValue(UIColor.white, forKey: "textColor")
+        changeDueDate.setValue(UIColor.white, forKey: "textColor")
         
-        changePromiseDate.setValue(false, forKey: "highlightsToday")
+        changeDueDate.setValue(false, forKey: "highlightsToday")
         
         
         
