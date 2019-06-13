@@ -7,5 +7,5 @@ target 'promiseBeta' do
 
   # Pods for promiseBeta
   pod 'Firebase/Core'
-
+  pod 'Sketch'
 end

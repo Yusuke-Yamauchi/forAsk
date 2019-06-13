@@ -49,9 +49,11 @@ PODS:
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
+  - Sketch (2.0)
 
 DEPENDENCIES:
   - Firebase/Core
+  - Sketch
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -62,6 +64,7 @@ SPEC REPOS:
     - GoogleAppMeasurement
     - GoogleUtilities
     - nanopb
+    - Sketch
 
 SPEC CHECKSUMS:
   Firebase: 5965bac23e7fcb5fa6d926ed429c9ecef8a2014e
@@ -71,7 +74,8 @@ SPEC CHECKSUMS:
   GoogleAppMeasurement: 51d8d9ea48f0ca44484d29cfbdef976fbd4fc336
   GoogleUtilities: 996e0db07153674fd1b54b220fda3a3dc3547cba
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
+  Sketch: c54b898799ba34cb282b57ff42b5d0a6071e855f
 
-PODFILE CHECKSUM: ab5f18966b00eda7a0587851043c4d642337f318
+PODFILE CHECKSUM: 24350e1246becf332483db194e0f4153455902a6
 
 COCOAPODS: 1.7.1
