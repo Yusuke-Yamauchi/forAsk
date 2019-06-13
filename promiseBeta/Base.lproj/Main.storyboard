@@ -414,7 +414,7 @@
         <!--Sign View Controller-->
         <scene sceneID="aNM-vc-IrZ">
             <objects>
-                <viewController id="Rqe-RR-aPc" customClass="SignViewController" customModule="promiseBeta" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignVC" id="Rqe-RR-aPc" customClass="SignViewController" customModule="promiseBeta" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Vh-XG-t3Z">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -439,6 +439,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="setPromiseButton:" destination="Rqe-RR-aPc" eventType="touchUpInside" id="iJf-ik-IQG"/>
                                     <segue destination="m6P-xp-lae" kind="show" id="tXu-dc-9Hk"/>
                                 </connections>
                             </button>
@@ -457,6 +458,16 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0XQ-zs-xHS" customClass="SketchView" customModule="Sketch">
                                 <rect key="frame" x="20" y="112" width="374" height="537"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jwc-xy-2bO">
+                                        <rect key="frame" x="8" y="496" width="69" height="45"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Clear"/>
+                                        <connections>
+                                            <action selector="clearButton:" destination="Rqe-RR-aPc" eventType="touchUpInside" id="h4t-pZ-8hA"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -477,10 +488,39 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mBb-0h-xOM"/>
                     </view>
+                    <connections>
+                        <outlet property="clearButton" destination="jwc-xy-2bO" id="ZMB-Sp-dSa"/>
+                        <outlet property="sketchView" destination="0XQ-zs-xHS" id="hp4-Yz-sgq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NQc-d9-apk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="850.72463768115949" y="101.78571428571428"/>
+        </scene>
+        <!--Test View Controller-->
+        <scene sceneID="Q8G-w7-gaO">
+            <objects>
+                <viewController id="0S3-Mn-8V8" customClass="testViewController" customModule="promiseBeta" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4l9-bV-ARF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="utP-b0-hNU">
+                                <rect key="frame" x="87" y="209" width="240" height="371"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Sln-aN-fcg"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="utP-b0-hNU" id="xJb-43-ygJ"/>
+                        <outlet property="view" destination="4l9-bV-ARF" id="qCZ-Es-QvA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UT5-Fo-htl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="811.59420289855075" y="860.49107142857144"/>
         </scene>
         <!--List View Controller-->
         <scene sceneID="Dv3-si-Dgb">
@@ -533,6 +573,14 @@
                                 <connections>
                                     <action selector="backToSign:" destination="m6P-xp-lae" eventType="touchUpInside" id="ryE-MQ-ZuX"/>
                                     <action selector="toTop:" destination="m6P-xp-lae" eventType="touchUpInside" id="KnD-c9-wFr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i0X-P3-rqZ">
+                                <rect key="frame" x="18" y="757" width="92" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="0S3-Mn-8V8" kind="show" id="PME-PF-PfI"/>
                                 </connections>
                             </button>
                         </subviews>
