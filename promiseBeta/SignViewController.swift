@@ -14,6 +14,10 @@ class SignViewController: UIViewController {
     
     @IBAction func backToTop(_ sender: Any) {
         
+        
+        
+        
+        
         //画面遷移 戻る！！！！！
         self.dismiss(animated: true, completion: nil)
         
