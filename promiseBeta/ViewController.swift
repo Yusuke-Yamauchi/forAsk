@@ -13,23 +13,28 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         
-        //日時カウンターの白にしてバックを不透明にする
+        //Promisedateの白にしてバックを不透明にする
         //https://wayohoo.com/programming/swift/how-to-change-text-color-for-uidatepicker.html
         changePromiseDate.setValue(UIColor.white, forKey: "textColor")
 
         changePromiseDate.setValue(false, forKey: "highlightsToday")
         
+        //duedateの白にしてバックを不透明にする
+        changePromiseDate.setValue(UIColor.white, forKey: "textColor")
+        
+        changePromiseDate.setValue(false, forKey: "highlightsToday")
+        
+        
         
         //detailの詳細が開いたらここに記載する説明
-        //detail部分
+        //detail部分初期値
         detailLongText.attributedPlaceholder = NSAttributedString(string: "Add the detail of your Promise...", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray])
 
-        //partnerName部分
+        //partnerName部分初期値
         partnerNameText.attributedPlaceholder = NSAttributedString(string: "Add your Partner Name...", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray])
         
-        //partnerEmail部分
+        //partnerEmail部分初期値
     partnerEmailText.attributedPlaceholder = NSAttributedString(string: "Add your Partner's Email Adress...", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray])
-        
         
         
     }
@@ -47,12 +52,13 @@ class ViewController: UIViewController {
     //promiseDateチェッカーの宣言
     @IBOutlet weak var changePromiseDate: UIDatePicker!
 
+    @IBOutlet weak var changeDueDate: UIDatePicker!
     
     // promiseDateのチェッカーを表示させるためのボタンの宣言
     @IBOutlet weak var promiseDateButton: UIButton!
     
     // 日時のチェッカーを取得してButtonに表示させるための変数
-    var promiseDateChaker: String = ""
+    var promiseDateCheker: String = ""
     
     // promiseDateのチェッカーを表示
     @IBAction func promiseDateButton(_ sender: Any) {
@@ -61,19 +67,20 @@ class ViewController: UIViewController {
     }
     
     
+    //dueDateのチェッカーを表示させるためにボタン宣言
+    @IBOutlet weak var dueDateButton: UIDatePicker!
+    
+    var dueDateCheker: String = ""
     
     
-    
+    // dueDateButtonチェッカーを表示
     @IBAction func dueDateButton(_ sender: Any) {
-        
-        
-        
-        
+        changeDueDate.isHidden = false
     }
-    
     
 
     @IBOutlet weak var yourNameText: UITextField!
+    
     @IBOutlet weak var partnerInfoText: UITextField!
     
     
@@ -125,18 +132,27 @@ class ViewController: UIViewController {
     }
     
     
-    //日時のカウンター
+    //promiseDate日時のカウンター
     @IBAction func changePromiseDate(_ sender: Any) {
         
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy年MM月dd日 HH:mm"
         
-        promiseDateChaker =      formatter.string(from: (sender as AnyObject).date)
+        promiseDateCheker =      formatter.string(from: (sender as AnyObject).date)
 
     }
     
     
-    
+    //dueDateの日時カウンター
+    @IBAction func changeDueDate(_ sender: Any) {
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy年MM月dd日 HH:mm"
+        
+        dueDateCheker =      formatter.string(from: (sender as AnyObject).date)
+        
+        
+    }
     
     
     
@@ -178,12 +194,8 @@ class ViewController: UIViewController {
     
 
     @IBAction func addPartnerButton(_ sender: Any) {
-        
-        
         //PartnerInfono膜を閉じる
         partnerView.isHidden = true
-        
-        
     }
     
     
