@@ -13,6 +13,12 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         
+        //日時カウンターの白にしてバックを不透明にする
+        //https://wayohoo.com/programming/swift/how-to-change-text-color-for-uidatepicker.html
+        changePromiseDate.setValue(UIColor.white, forKey: "textColor")
+
+        changePromiseDate.setValue(false, forKey: "highlightsToday")
+        
         
         //detailの詳細が開いたらここに記載する説明
         //detail部分
@@ -36,8 +42,37 @@ class ViewController: UIViewController {
     //ViewController上のTextField宣言系。気にしなくていい
     @IBOutlet weak var promiseNameText: UITextField!
     @IBOutlet weak var detailText: UITextField!
-    @IBOutlet weak var promiseDateText: UITextField!
-    @IBOutlet weak var dueDateText: UITextField!
+ 
+    
+    //promiseDateチェッカーの宣言
+    @IBOutlet weak var changePromiseDate: UIDatePicker!
+
+    
+    // promiseDateのチェッカーを表示させるためのボタンの宣言
+    @IBOutlet weak var promiseDateButton: UIButton!
+    
+    // 日時のチェッカーを取得してButtonに表示させるための変数
+    var promiseDateChaker: String = ""
+    
+    // promiseDateのチェッカーを表示
+    @IBAction func promiseDateButton(_ sender: Any) {
+     //promiseDateチェッカーを表示
+        changePromiseDate.isHidden = false
+    }
+    
+    
+    
+    
+    
+    @IBAction func dueDateButton(_ sender: Any) {
+        
+        
+        
+        
+    }
+    
+    
+
     @IBOutlet weak var yourNameText: UITextField!
     @IBOutlet weak var partnerInfoText: UITextField!
     
@@ -51,6 +86,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var detailView: UIView!
     //partnerの膜 宣言
     @IBOutlet weak var partnerView: UIView!
+    
+
+    
+    
+    
+    
+    
     
     
     //ここから実際の機能！！！！！
@@ -88,7 +130,8 @@ class ViewController: UIViewController {
         
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy年MM月dd日 HH:mm"
-        promiseDateText.text = formatter.string(from: (sender as AnyObject).date)
+        
+        promiseDateChaker =      formatter.string(from: (sender as AnyObject).date)
 
     }
     
