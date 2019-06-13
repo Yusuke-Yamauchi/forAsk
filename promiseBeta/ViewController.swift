@@ -5,37 +5,44 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         
         
         //detailの詳細が開いたらここに記載する説明
+        //detail部分
         detailLongText.attributedPlaceholder = NSAttributedString(string: "Add the detail of your Promise...", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray])
+
+        //partnerName部分
+        partnerNameText.attributedPlaceholder = NSAttributedString(string: "Add your Partner Name...", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray])
+        
+        //partnerEmail部分
+    partnerEmailText.attributedPlaceholder = NSAttributedString(string: "Add your Partner's Email Adress...", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray])
         
         
         
     }
     
-    
-    
-    
-    
-    
     //詳細を保存する配列を代入する変数
-    
     var data: [[String:Any]] = [[:]]
     
     
     
-    //ViewController上のTextField宣言系
+    //ViewController上のTextField宣言系。気にしなくていい
     @IBOutlet weak var promiseNameText: UITextField!
     @IBOutlet weak var detailText: UITextField!
     @IBOutlet weak var promiseDateText: UITextField!
     @IBOutlet weak var dueDateText: UITextField!
     @IBOutlet weak var yourNameText: UITextField!
     @IBOutlet weak var partnerInfoText: UITextField!
-    //viewController上のButton宣言系
+    
+    
+    //viewController上のButton宣言系 気にしなくていい。
     @IBOutlet weak var toListButton: UIButton!
     @IBOutlet weak var detailButton: UIButton!
     @IBOutlet weak var partnerButton: UIButton!
@@ -46,7 +53,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var partnerView: UIView!
     
     
-    
+    //ここから実際の機能！！！！！
     
     
     
@@ -61,6 +68,8 @@ class ViewController: UIViewController {
         //膜を開く
         detailView.isHidden = false
     }
+   
+    
     
     //Detailの詳細テキストフィールド
     @IBOutlet weak var detailLongText: UITextField!
@@ -71,9 +80,29 @@ class ViewController: UIViewController {
         detailView.isHidden = true
         
         //            if detailLongText.text != "" { detailText.text or detailButton.text = detailLongText.text の頭文字を表示
-        
-        
     }
+    
+    
+    //日時のカウンター
+    @IBAction func changePromiseDate(_ sender: Any) {
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy年MM月dd日 HH:mm"
+        promiseDateText.text = formatter.string(from: (sender as AnyObject).date)
+
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -91,23 +120,21 @@ class ViewController: UIViewController {
     
     
     
+
     
-    
+   //Partnerの膜の中身
     //先方の名前のテキスト
     @IBOutlet weak var partnerNameText: UITextField!
-    
-    
     //先方のEmailのテキスト
     @IBOutlet weak var partnerEmailText: UITextField!
     
+
     
-    //各セクションのデータを保存
+    
+    
+    
+
     @IBAction func addPartnerButton(_ sender: Any) {
-        
-        
-        
-        //PartnerInfoの名前とEmailを辞書で保存
-        //            var prtInfoDic: [String: String] = ["name": partnerNameText.text!   , "email": partnerEmailText.text!]
         
         
         //PartnerInfono膜を閉じる
