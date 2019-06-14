@@ -54,22 +54,26 @@ class ViewController: UIViewController {
     
   
     
-    //PromiseDateカウンターを消すボタン宣言
+    //PromiseDateカウンターを消し下記のボタンに時刻を表示させるボタン宣言
     @IBOutlet weak var closePromiseDate: UIButton!
     @IBAction func closePromiseDate(_ sender: UIButton) {
-    changePromiseDate.isHidden = true
         
+        promiseDateButton.setTitle(promiseDateCheker, for: .normal) // ボタンのタイトル
+        promiseDateButton.setTitleColor(UIColor.black, for: .normal) // タイトルの色
+        
+        
+    changePromiseDate.isHidden = true
         closePromiseDate.isHidden = true
     }
     
     // 日時のチェッカーを取得してButtonに表示させるための変数
     var promiseDateCheker: String = ""
     
+    
     // promiseDateのチェッカーを表示
     @IBAction func promiseDateButton(_ sender: Any) {
      //promiseDateチェッカーを表示
         changePromiseDate.isHidden = false
-    
         closePromiseDate.isHidden = false
     }
     
@@ -77,16 +81,19 @@ class ViewController: UIViewController {
     @IBOutlet weak var closeDueDate: UIButton!
     
     @IBAction func closeDueDate(_ sender: Any) {
+        dueDateButton.setTitle(dueDateCheker, for: .normal) // ボタンのタイトル
+        dueDateButton.setTitleColor(UIColor.black, for: .normal) // タイトルの色
+        
         changeDueDate.isHidden = true
         closeDueDate.isHidden = true
     }
     
     
     //dueDateのチェッカーを表示させるためにボタン宣言
-    @IBOutlet weak var dueDateButton: UIDatePicker!
+
+    @IBOutlet weak var dueDateButton: UIButton!
     
     var dueDateCheker: String = ""
-    
     
     // dueDateButtonチェッカーを表示
     @IBAction func dueDateButton(_ sender: Any) {
@@ -134,8 +141,6 @@ class ViewController: UIViewController {
         detailView.isHidden = false
     }
    
-    
-    
     //Detailの詳細テキストフィールド
     @IBOutlet weak var detailLongText: UITextField!
     

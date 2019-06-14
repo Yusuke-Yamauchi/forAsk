@@ -224,7 +224,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ed0-IL-rQP">
                                 <rect key="frame" x="215" y="363" width="140" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Due Date Button"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                         <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -356,7 +356,7 @@
                         <outlet property="detailLongText" destination="JG8-fV-S3t" id="TcR-QM-xyX"/>
                         <outlet property="detailText" destination="ocw-va-Ic2" id="a97-gQ-eRp"/>
                         <outlet property="detailView" destination="StL-ei-R7B" id="ZG3-Ll-VX0"/>
-                        <outlet property="dueDateButton" destination="YNm-ya-4cW" id="twT-uF-NtC"/>
+                        <outlet property="dueDateButton" destination="Ed0-IL-rQP" id="6e6-Rr-ErN"/>
                         <outlet property="nextButton" destination="khJ-zD-lWT" id="uLC-GL-4vc"/>
                         <outlet property="partnerButton" destination="miZ-jw-B2g" id="K86-7s-qeK"/>
                         <outlet property="partnerEmailText" destination="bpU-Yc-tbz" id="3PS-Vr-biu"/>
