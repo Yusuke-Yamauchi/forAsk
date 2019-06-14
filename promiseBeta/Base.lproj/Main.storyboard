@@ -237,11 +237,13 @@
                                     <action selector="dueDateButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dwA-Q6-4Qi"/>
                                 </connections>
                             </button>
-                            <datePicker hidden="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="YNm-ya-4cW">
-                                <rect key="frame" x="32" y="317" width="350" height="122"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <datePicker hidden="YES" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="YNm-ya-4cW">
+                                <rect key="frame" x="32" y="327" width="350" height="112"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="112" id="lTV-Ov-qut"/>
+                                </constraints>
                                 <date key="date" timeIntervalSinceReferenceDate="582106198.55054903">
                                     <!--2019-06-13 08:09:58 +0000-->
                                 </date>
@@ -258,11 +260,13 @@
                                     <action selector="changeDueDate:" destination="BYZ-38-t0r" eventType="valueChanged" id="VFO-nl-Dhw"/>
                                 </connections>
                             </datePicker>
-                            <datePicker hidden="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="gXe-es-Un6">
-                                <rect key="frame" x="32" y="249" width="350" height="119"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <datePicker hidden="YES" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="gXe-es-Un6">
+                                <rect key="frame" x="32" y="249" width="350" height="112"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="112" id="LIo-my-FtS"/>
+                                </constraints>
                                 <date key="date" timeIntervalSinceReferenceDate="582106198.55054903">
                                     <!--2019-06-13 08:09:58 +0000-->
                                 </date>
@@ -279,14 +283,40 @@
                                     <action selector="changePromiseDate:" destination="BYZ-38-t0r" eventType="valueChanged" id="yTe-yT-O73"/>
                                 </connections>
                             </datePicker>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iQY-N4-AB7">
+                                <rect key="frame" x="186" y="398" width="42" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="add">
+                                    <color key="titleColor" red="0.80444462439999997" green="0.2232976139" blue="0.25655349760000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeDueDate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VdM-bq-2LP"/>
+                                    <action selector="closePromiseDate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AIx-sE-wl1"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vs0-GP-gxM">
+                                <rect key="frame" x="186" y="314" width="42" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="add">
+                                    <color key="titleColor" red="0.80444462439999997" green="0.2232976139" blue="0.25655349760000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="closePromiseDate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E8a-To-C4v"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gXe-es-Un6" secondAttribute="trailing" constant="32" id="0VC-hm-8AW"/>
                             <constraint firstItem="gC0-n2-lS7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="1bT-8J-ToE"/>
                             <constraint firstItem="QcL-lO-EYf" firstAttribute="top" secondItem="94g-hJ-9bE" secondAttribute="bottom" constant="50" id="2Mg-tE-EEh"/>
                             <constraint firstItem="94g-hJ-9bE" firstAttribute="top" secondItem="Q0a-CF-r4J" secondAttribute="bottom" constant="35" id="7lf-y7-K96"/>
+                            <constraint firstItem="gXe-es-Un6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="205" id="Dhh-3B-d0t"/>
                             <constraint firstItem="khJ-zD-lWT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EdT-zs-24F"/>
                             <constraint firstItem="vkg-Qq-lQk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="HcR-bm-aAQ"/>
+                            <constraint firstItem="YNm-ya-4cW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="IBe-mC-4ht"/>
                             <constraint firstItem="ocw-va-Ic2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="78" id="JCf-NR-ayn"/>
                             <constraint firstItem="Fxx-8v-tuu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="LFa-UY-bNM"/>
                             <constraint firstItem="GBz-07-5TK" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="NwZ-Tr-YMS"/>
@@ -298,6 +328,7 @@
                             <constraint firstItem="Fxx-8v-tuu" firstAttribute="top" secondItem="vkg-Qq-lQk" secondAttribute="bottom" constant="50" id="di0-SB-gty"/>
                             <constraint firstItem="94g-hJ-9bE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="ejt-9g-u0p"/>
                             <constraint firstItem="vkg-Qq-lQk" firstAttribute="top" secondItem="QcL-lO-EYf" secondAttribute="bottom" constant="50" id="fcV-nN-ioJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YNm-ya-4cW" secondAttribute="trailing" constant="32" id="iwd-Ax-tRO"/>
                             <constraint firstItem="Q0a-CF-r4J" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="kMb-Nf-kkY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="khJ-zD-lWT" secondAttribute="bottom" constant="50" id="lIm-eg-syQ"/>
                             <constraint firstItem="TP6-v1-VeG" firstAttribute="centerY" secondItem="94g-hJ-9bE" secondAttribute="centerY" id="lMz-Ql-8NO"/>
@@ -305,18 +336,22 @@
                             <constraint firstItem="gC0-n2-lS7" firstAttribute="top" secondItem="Fxx-8v-tuu" secondAttribute="bottom" constant="50" id="mYv-3h-gCC"/>
                             <constraint firstItem="Ngd-eT-KqE" firstAttribute="top" secondItem="gC0-n2-lS7" secondAttribute="bottom" constant="50" id="oOy-UA-uBE"/>
                             <constraint firstItem="6uM-dd-yUT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="qJV-y2-OsW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="YNm-ya-4cW" secondAttribute="bottom" constant="423" id="qM4-JL-odd"/>
                             <constraint firstItem="QcL-lO-EYf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="quO-Nr-3MT"/>
                             <constraint firstItem="TP6-v1-VeG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="78" id="rb7-Ej-YjY"/>
                             <constraint firstItem="hto-4E-1G4" firstAttribute="centerY" secondItem="Ngd-eT-KqE" secondAttribute="centerY" id="rnO-BN-MfF"/>
                             <constraint firstItem="Ngd-eT-KqE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="w6S-pf-Yke"/>
                             <constraint firstItem="hto-4E-1G4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="78" id="wvP-if-fv1"/>
                             <constraint firstItem="Q0a-CF-r4J" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="x7T-IG-yro"/>
+                            <constraint firstItem="gXe-es-Un6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="zZ4-qF-PPh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="changeDueDate" destination="YNm-ya-4cW" id="Vfy-Pf-dTE"/>
                         <outlet property="changePromiseDate" destination="gXe-es-Un6" id="GGw-Ug-TCr"/>
+                        <outlet property="closeDueDate" destination="iQY-N4-AB7" id="sX7-1f-CFE"/>
+                        <outlet property="closePromiseDate" destination="vs0-GP-gxM" id="NtU-Dx-kTR"/>
                         <outlet property="detailButton" destination="gwR-oc-pIo" id="Tlh-JL-z7M"/>
                         <outlet property="detailLongText" destination="JG8-fV-S3t" id="TcR-QM-xyX"/>
                         <outlet property="detailText" destination="ocw-va-Ic2" id="a97-gQ-eRp"/>
@@ -576,7 +611,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i0X-P3-rqZ">
-                                <rect key="frame" x="18" y="757" width="92" height="72"/>
+                                <rect key="frame" x="18" y="745" width="92" height="72"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>

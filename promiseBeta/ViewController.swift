@@ -52,6 +52,16 @@ class ViewController: UIViewController {
     // promiseDateのチェッカーを表示させるためのボタンの宣言
     @IBOutlet weak var promiseDateButton: UIButton!
     
+  
+    
+    //PromiseDateカウンターを消すボタン宣言
+    @IBOutlet weak var closePromiseDate: UIButton!
+    @IBAction func closePromiseDate(_ sender: UIButton) {
+    changePromiseDate.isHidden = true
+        
+        closePromiseDate.isHidden = true
+    }
+    
     // 日時のチェッカーを取得してButtonに表示させるための変数
     var promiseDateCheker: String = ""
     
@@ -59,6 +69,16 @@ class ViewController: UIViewController {
     @IBAction func promiseDateButton(_ sender: Any) {
      //promiseDateチェッカーを表示
         changePromiseDate.isHidden = false
+    
+        closePromiseDate.isHidden = false
+    }
+    
+//dueDateカウンターを消すボタン宣言
+    @IBOutlet weak var closeDueDate: UIButton!
+    
+    @IBAction func closeDueDate(_ sender: Any) {
+        changeDueDate.isHidden = true
+        closeDueDate.isHidden = true
     }
     
     
@@ -71,6 +91,7 @@ class ViewController: UIViewController {
     // dueDateButtonチェッカーを表示
     @IBAction func dueDateButton(_ sender: Any) {
         changeDueDate.isHidden = false
+        closeDueDate.isHidden = false
     }
     
 
