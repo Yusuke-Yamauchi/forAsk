@@ -1,11 +1,60 @@
 import UIKit
 
-class ListViewController: UIViewController {
+
+//UITableView のメソッドを読むために UITableViewDelegate(tableViewのメソッドをインポート UITableViewDataSource(?)
+
+class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        //辞書の配列の数だけRowができる
+        return promiseUserC.count
+        
+    }
+    
+    //セルの内容を記述するはず
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "proCell", for: indexPath)
+        
+        let a = promiseUserC[0]["prName"] as! String
+        
+        cell.textLabel?.text = a
+        
+        return cell
+        
+    }
+    
+    //TableViewの宣言
+    @IBOutlet weak var tableView: UITableView!
+    //締結したPromiseを呼び出せるセル
+    
+    
+    //ユーザーデフォルトから最終情報をとってくる
+    var promiseUserC : [[String:Any]] = [[:]]
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
+        if UserDefaults.standard.object(forKey: "pData") != nil {
+            promiseUserC = UserDefaults.standard.object(forKey: "pData") as! [[String : Any]]
+            
+            self.tableView.reloadData()
+            
+            
+        }
+        
     }
     
     
@@ -18,14 +67,9 @@ class ListViewController: UIViewController {
     }
     
     
-    
     @IBAction func toTop(_ sender: Any) {
         //画面遷移 最初に戻る！！！！！
-            
-        
-        
         self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
-        
         
     }
     
