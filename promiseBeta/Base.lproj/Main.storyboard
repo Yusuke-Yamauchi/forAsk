@@ -226,14 +226,14 @@
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ig6-pN-1af">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Partner Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AVj-cC-Bem">
-                                        <rect key="frame" x="96" y="134" width="222" height="49"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="41"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Partner Info" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AVj-cC-Bem">
+                                        <rect key="frame" x="99" y="134" width="216.5" height="48"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S1s-gS-YVD">
-                                        <rect key="frame" x="20" y="293" width="374" height="40"/>
+                                        <rect key="frame" x="20" y="292" width="374" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="PG2-I9-Age"/>
                                         </constraints>
@@ -242,7 +242,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bpU-Yc-tbz">
-                                        <rect key="frame" x="20" y="373" width="374" height="40"/>
+                                        <rect key="frame" x="20" y="372" width="374" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="BUb-uR-Mbl"/>
                                         </constraints>
