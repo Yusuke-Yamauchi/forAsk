@@ -5,7 +5,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //入力画面ないしkeyboardの外を押したら、キーボードを閉じる処理
+//入力画面ないしkeyboardの外を押したら、キーボードを閉じる処理
         //
         promiseNameText.delegate = self
         detailLongText.delegate = self
@@ -43,7 +43,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         partnerButton.isEnabled = true
         yourNameText.isUserInteractionEnabled = true
         nextButton.isEnabled = true
-        
     }
     
     
@@ -83,8 +82,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var promiseNameText: UITextField!
     func promiseNameTextShouldReturn(_ promiseNameText: UITextField) -> Bool{
         // キーボードを閉じる
+    
         promiseNameText.resignFirstResponder()
-        
         return true
     }
     
@@ -98,6 +97,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             detailLongText.translatesAutoresizingMaskIntoConstraints = true
         }
     }
+    
     func detailLongTextShouldReturn(_ detailLongText: UITextField) -> Bool{
         // キーボードを閉じる
         detailLongText.resignFirstResponder()
@@ -138,6 +138,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         partnerNameText.resignFirstResponder()
         
         return true
+    
     }
     //先方のEmailのテキスト
     @IBOutlet weak var partnerEmailText: UITextField!
@@ -146,6 +147,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         partnerEmailText.resignFirstResponder()
         
         return true
+    
     }
     
     //移動のButton宣言系
