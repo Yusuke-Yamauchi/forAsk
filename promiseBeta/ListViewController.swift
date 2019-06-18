@@ -1,10 +1,11 @@
 import UIKit
 
 
-//UITableView のメソッドを読むために UITableViewDelegate(tableViewのメソッドをインポート UITableViewDataSource(?)
+//UITableView のメソッドを読むために UITableViewDelegate(tableViewのメソッドをインポート UITableViewDataSource付け加える
 
 class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
+    //行の数を指定
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         //辞書の配列の数だけRowができる
@@ -12,12 +13,12 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
-    //セルの内容を記述するはず
+    //セルの内容を記述
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "proCell", for: indexPath)
-        
+   
+    //配列の中の辞書のキーをとりだして定数aに入れる
         let a = promiseUserC[0]["prName"] as! String
         
         cell.textLabel?.text = a
@@ -30,7 +31,6 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var tableView: UITableView!
     //締結したPromiseを呼び出せるセル
     
-    
     //ユーザーデフォルトから最終情報をとってくる
     var promiseUserC : [[String:Any]] = [[:]]
     
@@ -38,10 +38,14 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+        //これを読み込まないとTableViewの機能が実行されない
+        tableView.dataSource = self
+        tableView.delegate = self
         
     }
+    
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
