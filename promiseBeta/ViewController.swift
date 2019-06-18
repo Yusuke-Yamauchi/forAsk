@@ -4,11 +4,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      
-
-   
         
-    
     }
     
     //全てのボタンを無効にする関数
@@ -55,24 +51,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
         changeDueDate.setValue(false, forKey: "highlightsToday")
         
         
+        // textFieldの初期値Placeholderがあるので必要なくなった       partnerNameText.attributedPlaceholder = NSAttributedString(string: "Add your Partner Name...", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray])
         
-        //detailの詳細が開いたらここに記載する説明
-        //detail部分初期値
-//        detailLongText.attributedPlaceholder = NSAttributedString(string: "Add the detail of your Promise...", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray])
-        
-        //partnerName部分初期値
-        partnerNameText.attributedPlaceholder = NSAttributedString(string: "Add your Partner Name...", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray])
-        
-        //partnerEmail部分初期値
-        partnerEmailText.attributedPlaceholder = NSAttributedString(string: "Add your Partner's Email Adress...", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray])
-        
+        //   partnerEmailText.attributedPlaceholder = NSAttributedString(string: "Add your Partner's Email Adress...", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray])
     }
     
-    
-    //ViewController上のTextField宣言系
-    
-    //promiseNameの宣言とリターンで閉じるアクション
+    //promiseNameの宣言
     @IBOutlet weak var promiseNameText: UITextField!
+    //リターンで閉じるアクション
     @IBAction func promiseNameText(_ sender: Any) {
     }
     //detailの幕が開くボタンの宣言
@@ -93,8 +79,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var changeDueDate: UIDatePicker!
     //dueDateチェッカーを消すボタン宣言
     @IBOutlet weak var closeDueDate: UIButton!
-    //yourNameの宣言とリターンで閉じるアクション
+    //yourNameの宣言
     @IBOutlet weak var yourNameText: UITextField!
+    //リターンで閉じるアクション
     @IBAction func yourNameText(_ sender: Any) {
     }
     //partnerInfoのボタンの宣言
@@ -126,14 +113,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     
     
-
+    
     //Detailの膜をあける透明ボタン
     @IBAction func detailButton(_ sender: Any) {
         allDisable()
         //膜を開く
         detailView.isHidden = false
     }
-    //他の部分をタップするとキーボードが閉じる。なぜならここは長文なのでり開業が必要だから
+    //他の部分をタップするとキーボードが閉じる。なぜならここは長文なので改行が必要だから
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if (self.detailLongText.isFirstResponder) {
             self.detailLongText.resignFirstResponder()
@@ -146,12 +133,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
         //膜を閉じる
         detailView.isHidden = true
         allEnable()
-       
+        
         if detailLongText != nil {
-detailButton.setTitle(detailLongText.text, for: .normal) // ボタンのタイトル
+            detailButton.setTitle(detailLongText.text, for: .normal) // ボタンのタイトル
         }
         
-    detailButton.setTitleColor(UIColor.black, for: .normal) // タイトルの色
+        detailButton.setTitleColor(UIColor.black, for: .normal) // タイトルの色
         
         
     }
@@ -223,7 +210,7 @@ detailButton.setTitle(detailLongText.text, for: .normal) // ボタンのタイ�
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy年MM月dd日 HH:mm"
         
-        dueDateCheker =      formatter.string(from: (sender as AnyObject).date)
+        dueDataeCheker =      formatter.string(from: (sender as AnyObject).date)
         
         
     }
@@ -304,7 +291,7 @@ detailButton.setTitle(detailLongText.text, for: .normal) // ボタンのタイ�
         
         
         
-            data = ["prName": prName, "dtl": dtl, "prDate": prDate, "dDate": dDate, "urName": urName, "prtInfoDic": prtInfoDic]
+        data = ["prName": prName, "dtl": dtl, "prDate": prDate, "dDate": dDate, "urName": urName, "prtInfoDic": prtInfoDic]
         
         UserDefaults.standard.set( data, forKey: "pData")
         
