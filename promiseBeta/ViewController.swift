@@ -4,6 +4,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+      
+
+   
+        
+    
     }
     
     //全てのボタンを無効にする関数
@@ -275,7 +280,7 @@ detailButton.setTitle(detailLongText.text, for: .normal) // ボタンのタイ�
     
     
     //詳細を保存する配列を代入する変数
-    var data: [[String:Any]] = [[:]]
+    var data: [String:Any] = [:]
     
     
     
@@ -298,7 +303,8 @@ detailButton.setTitle(detailLongText.text, for: .normal) // ボタンのタイ�
         let prtInfoDic: [String: String] = ["name": partnerNameText.text!   , "email": partnerEmailText.text!]
         
         
-        data[0] = ["prName": prName, "dtl": dtl, "prDate": prDate, "dDate": dDate, "urName": urName, "prtInfoDic": prtInfoDic]
+        
+            data = ["prName": prName, "dtl": dtl, "prDate": prDate, "dDate": dDate, "urName": urName, "prtInfoDic": prtInfoDic]
         
         UserDefaults.standard.set( data, forKey: "pData")
         
