@@ -2,10 +2,40 @@ import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
     
+    //立ち上がりの処理
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
+    
+    //画面遷移してきた時の処理 toTop から戻ってきた時、初期化するための処理を
+    override func viewDidAppear(_ animated: Bool) {
+    }
+    
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        //Promisedateチェッカーを白にしてバックを不透明にする
+        //        https://wayohoo.com/programming/swift/how-to-change-text-color-for-uidatepicker.html
+        
+        
+        changePromiseDate.setValue(UIColor.white, forKey: "textColor")
+        
+        changePromiseDate.setValue(false, forKey: "highlightsToday")
+        
+        //duedateチェッカーを白にしてバックを不透明にする
+        changeDueDate.setValue(UIColor.white, forKey: "textColor")
+        
+        changeDueDate.setValue(false, forKey: "highlightsToday")
+        
+        
+        // textFieldの初期値Placeholderがあるので必要なくなった       partnerNameText.attributedPlaceholder = NSAttributedString(string: "Add your Partner Name...", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray])
+        
+        //   partnerEmailText.attributedPlaceholder = NSAttributedString(string: "Add your Partner's Email Adress...", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray])
+    }
+    
+    
+    
     
     //全てのボタンを無効にする関数
     func allDisable() {
@@ -34,27 +64,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         nextButton.isEnabled = true
     }
     
-    
-    override func viewWillAppear(_ animated: Bool) {
-        
-        //Promisedateチェッカーを白にしてバックを不透明にする
-        //        https://wayohoo.com/programming/swift/how-to-change-text-color-for-uidatepicker.html
-        
-        
-        changePromiseDate.setValue(UIColor.white, forKey: "textColor")
-        
-        changePromiseDate.setValue(false, forKey: "highlightsToday")
-        
-        //duedateチェッカーを白にしてバックを不透明にする
-        changeDueDate.setValue(UIColor.white, forKey: "textColor")
-        
-        changeDueDate.setValue(false, forKey: "highlightsToday")
-        
-        
-        // textFieldの初期値Placeholderがあるので必要なくなった       partnerNameText.attributedPlaceholder = NSAttributedString(string: "Add your Partner Name...", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray])
-        
-        //   partnerEmailText.attributedPlaceholder = NSAttributedString(string: "Add your Partner's Email Adress...", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray])
-    }
+
     
     //promiseNameの宣言
     @IBOutlet weak var promiseNameText: UITextField!
@@ -294,7 +304,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
         } else {
             showAlert(message:
-                "Please fill in the blanks")
+                "Please Fill in the Blanks")
         }
         
     }
