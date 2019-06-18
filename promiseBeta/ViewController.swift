@@ -287,6 +287,7 @@ detailButton.setTitle(detailLongText.text, for: .normal) // ボタンのタイ�
     @IBAction func nextButton(_ sender: Any) {
         
         
+        
         //promiseName OK
         let prName: String = promiseNameText.text!
         //detaile OK
