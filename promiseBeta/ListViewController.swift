@@ -19,13 +19,25 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = tableView.dequeueReusableCell(withIdentifier: "proCell", for: indexPath)
    
     //配列の中の辞書のキーをとりだして定数aに入れる
-        let a = promiseUserC[0]["prName"] as! String
+       // let a = promiseUserC[indexPath.row]["prName"] as! String
         
-        cell.textLabel?.text = a
+        cell.textLabel?.text = promiseUserC[indexPath.row
+            ]["prName"] as! String
         
         return cell
         
     }
+    
+    
+    // セルをデリートする機能を付け加える
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            promiseUserC.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
+            UserDefaults.standard.set( promiseUserC, forKey: "promiseMade")
+        }
+    }
+    
     
     //TableViewの宣言
     @IBOutlet weak var tableView: UITableView!
@@ -51,12 +63,12 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewWillAppear(animated)
         
         
-        if UserDefaults.standard.object(forKey: "pData") != nil {
-            promiseUserC = UserDefaults.standard.object(forKey: "pData") as! [[String : Any]]
+        if UserDefaults.standard.object(forKey: "promiseMade") != nil {
+            promiseUserC = UserDefaults.standard.object(forKey: "promiseMade") as! [[String : Any]]
             
             self.tableView.reloadData()
             
-            
+            print(promiseUserC)
         }
         
     }
@@ -76,6 +88,9 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
         
     }
+    
+    
+    
     
     
     
