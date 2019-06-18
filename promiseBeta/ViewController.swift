@@ -105,10 +105,20 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     
     
-    //___________promiseName部分!!!!!!!!!
-    
-    
-    
+    //他の部分をタップするとキーボードが閉じる機能
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if (self.detailLongText.isFirstResponder) {
+            self.detailLongText.resignFirstResponder()
+        }
+        
+        if (self.promiseNameText.isFirstResponder) {
+            self.promiseNameText.resignFirstResponder()
+        }
+        
+        if (self.yourNameText.isFirstResponder) {
+            self.yourNameText.resignFirstResponder()
+        }
+    }
     
     
     
@@ -120,12 +130,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         //膜を開く
         detailView.isHidden = false
     }
-    //他の部分をタップするとキーボードが閉じる。なぜならここは長文なので改行が必要だから
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if (self.detailLongText.isFirstResponder) {
-            self.detailLongText.resignFirstResponder()
-        }
-    }
+    
     
     //Detailの膜を閉じる
     @IBAction func addDetailButton(_ sender: Any) {
@@ -210,7 +215,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy年MM月dd日 HH:mm"
         
-        dueDataeCheker =      formatter.string(from: (sender as AnyObject).date)
+        dueDateCheker =      formatter.string(from: (sender as AnyObject).date)
         
         
     }
