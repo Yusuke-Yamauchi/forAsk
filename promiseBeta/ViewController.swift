@@ -277,30 +277,47 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func nextButton(_ sender: Any) {
-        
-        
-        
         //promiseName OK
         let prName: String = promiseNameText.text!
-        //detaile OK
         let dtl: String = detailLongText.text!
-        //promiseDate OK
         let prDate = promiseDateCheker
-        //dueDate OK
         let dDate = dueDateCheker
-        //yourName OK
         let urName: String = yourNameText.text!
-        //partnerInfo OK
         //PartnerInfoの名前とEmailを辞書で保存
         let prtInfoDic: [String: String] = ["name": partnerNameText.text!   , "email": partnerEmailText.text!]
         
-        
-        
-        data = ["prName": prName, "dtl": dtl, "prDate": prDate, "dDate": dDate, "urName": urName, "prtInfoDic": prtInfoDic]
-        
-        UserDefaults.standard.set( data, forKey: "pData")
+        //各項目がからでなければ
+        if prName.isEmpty == false && dtl.isEmpty == false && prDate.isEmpty == false && dDate.isEmpty == false && urName.isEmpty == false && partnerNameText.text != "" && partnerEmailText.text != ""{
+            data = ["prName": prName, "dtl": dtl, "prDate": prDate, "dDate": dDate, "urName": urName, "prtInfoDic": prtInfoDic]
+            
+            UserDefaults.standard.set( data, forKey: "pData")
+            
+        } else {
+            showAlert(message:
+                "Please fill in the blanks")
+        }
         
     }
+    
+    
+    //アラート関数
+    func showAlert(message: String) {
+        
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        
+        let close = UIAlertAction(title: "Close", style: .cancel, handler: nil)
+        
+        alert.addAction(close)
+        
+        present(alert, animated: true, completion: nil)
+        
+    }
+    
+    
+    
+    
+    
+    
     
 }
 

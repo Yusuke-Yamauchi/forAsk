@@ -86,6 +86,8 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBAction func toTop(_ sender: Any) {
         //画面遷移 最初に戻る！！！！！
         self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+
+        UserDefaults.standard.removeObject(forKey: "pData")
         
     }
     
