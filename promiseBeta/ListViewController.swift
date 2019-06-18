@@ -27,6 +27,16 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
+    
+    // セルをデリートする機能を付け加える
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            promiseUserC.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
+        }
+    }
+    
+    
     //TableViewの宣言
     @IBOutlet weak var tableView: UITableView!
     //締結したPromiseを呼び出せるセル
@@ -76,6 +86,9 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
         
     }
+    
+    
+    
     
     
     
