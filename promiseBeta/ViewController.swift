@@ -326,7 +326,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         //PartnerInfoの名前とEmailを辞書で保存
         let prtInfoDic: [String: String] = ["name": partnerNameText.text!   , "email": partnerEmailText.text!]
         
-        //        let empty = ""
+     
         
         data[0] = ["prName": prName, "dtl": dtl, "prDate": prDate, "dDate": dDate, "urName": urName, "prtInfoDic": prtInfoDic]
         

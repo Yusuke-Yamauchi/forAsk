@@ -518,13 +518,14 @@
                                     <action selector="backToTop:" destination="Rqe-RR-aPc" eventType="touchUpInside" id="ci4-wq-Ffj"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0XQ-zs-xHS" customClass="SketchView" customModule="Sketch">
-                                <rect key="frame" x="20" y="112" width="374" height="537"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0XQ-zs-xHS" customClass="SketchView" customModule="Sketch">
+                                <rect key="frame" x="20" y="106" width="374" height="551"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jwc-xy-2bO">
-                                        <rect key="frame" x="8" y="496" width="69" height="45"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jwc-xy-2bO">
+                                        <rect key="frame" x="4" y="517" width="50" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="NcE-I4-r9L"/>
+                                        </constraints>
                                         <state key="normal" title="Clear"/>
                                         <connections>
                                             <action selector="clearButton:" destination="Rqe-RR-aPc" eventType="touchUpInside" id="h4t-pZ-8hA"/>
@@ -532,6 +533,10 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="jwc-xy-2bO" firstAttribute="leading" secondItem="0XQ-zs-xHS" secondAttribute="leading" constant="4" id="Na5-x3-e9e"/>
+                                    <constraint firstAttribute="bottom" secondItem="jwc-xy-2bO" secondAttribute="bottom" constant="4" id="SI1-QL-oE1"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                         <real key="value" value="2"/>
@@ -544,10 +549,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="0XQ-zs-xHS" firstAttribute="leading" secondItem="mBb-0h-xOM" secondAttribute="leading" constant="20" id="BAF-5b-Ps1"/>
                             <constraint firstItem="uZb-qp-vwb" firstAttribute="centerX" secondItem="7Vh-XG-t3Z" secondAttribute="centerX" id="C02-Q8-1t1"/>
                             <constraint firstItem="AWb-j0-S5F" firstAttribute="top" secondItem="mBb-0h-xOM" secondAttribute="top" id="FWx-Fg-U8X"/>
+                            <constraint firstItem="0XQ-zs-xHS" firstAttribute="top" secondItem="AWb-j0-S5F" secondAttribute="bottom" constant="20" id="P9i-ya-uPj"/>
+                            <constraint firstItem="mBb-0h-xOM" firstAttribute="trailing" secondItem="0XQ-zs-xHS" secondAttribute="trailing" constant="20" id="cMG-Qr-S97"/>
                             <constraint firstItem="AWb-j0-S5F" firstAttribute="leading" secondItem="mBb-0h-xOM" secondAttribute="leading" constant="40" id="dR3-yt-zLc"/>
                             <constraint firstItem="mBb-0h-xOM" firstAttribute="bottom" secondItem="uZb-qp-vwb" secondAttribute="bottom" constant="50" id="oAz-sO-b97"/>
+                            <constraint firstItem="uZb-qp-vwb" firstAttribute="top" secondItem="0XQ-zs-xHS" secondAttribute="bottom" constant="80" id="yhX-gL-a0Y"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mBb-0h-xOM"/>
                     </view>
