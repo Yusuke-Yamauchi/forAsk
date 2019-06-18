@@ -4,7 +4,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     //全てのボタンを無効にする関数
@@ -82,10 +81,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
             detailLongText.translatesAutoresizingMaskIntoConstraints = true
         }
     }
-    //リターンで閉じるアクション
-    @IBAction func detailLongText(_ sender: Any) {
-    }
-    
     //promiseDateのチェッカーを表示させるためのボタンの宣言
     @IBOutlet weak var promiseDateButton: UIButton!
     //promiseDateチェッカーの宣言
@@ -131,14 +126,19 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     
     
-    //___________Detail部分！！！！！！！！
+
     //Detailの膜をあける透明ボタン
     @IBAction func detailButton(_ sender: Any) {
         allDisable()
         //膜を開く
         detailView.isHidden = false
     }
-    
+    //他の部分をタップするとキーボードが閉じる。なぜならここは長文なのでり開業が必要だから
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if (self.detailLongText.isFirstResponder) {
+            self.detailLongText.resignFirstResponder()
+        }
+    }
     
     //Detailの膜を閉じる
     @IBAction func addDetailButton(_ sender: Any) {
