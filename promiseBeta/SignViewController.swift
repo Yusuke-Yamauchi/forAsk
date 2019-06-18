@@ -113,11 +113,10 @@ class SignViewController: UIViewController {
         promiseUser[0].updateValue(setImage, forKey: "sign")
           
         UserDefaults.standard.set( promiseUser, forKey: "pData")
+
         
     }
     
 
-    
-    
 }
 

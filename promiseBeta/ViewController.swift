@@ -53,7 +53,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         //detailの詳細が開いたらここに記載する説明
         //detail部分初期値
-        detailLongText.attributedPlaceholder = NSAttributedString(string: "Add the detail of your Promise...", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray])
+//        detailLongText.attributedPlaceholder = NSAttributedString(string: "Add the detail of your Promise...", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray])
         
         //partnerName部分初期値
         partnerNameText.attributedPlaceholder = NSAttributedString(string: "Add your Partner Name...", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray])
@@ -74,13 +74,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var detailButton: UIButton!
     //Detailの膜 宣言
     @IBOutlet weak var detailView: UIView!
-    //Detailの膜の中身の宣言とリターンで閉じるアクション
-    @IBOutlet weak var detailLongText: UITextField!{
-        didSet {
-            //textViewのtextの量に応じて、textViewの高さを決める
-            detailLongText.translatesAutoresizingMaskIntoConstraints = true
-        }
-    }
+    //Detailの膜の中身の宣言
+    @IBOutlet weak var detailLongText: UITextView!
     //promiseDateのチェッカーを表示させるためのボタンの宣言
     @IBOutlet weak var promiseDateButton: UIButton!
     //promiseDateチェッカーの宣言

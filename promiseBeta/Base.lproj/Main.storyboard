@@ -381,16 +381,6 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JG8-fV-S3t">
-                                        <rect key="frame" x="17" y="298" width="380" height="100"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="aze-1r-o5w"/>
-                                            <constraint firstAttribute="width" constant="380" id="iTu-8m-N90"/>
-                                        </constraints>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uso-rR-phm">
                                         <rect key="frame" x="100" y="582" width="214" height="60"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
@@ -401,6 +391,16 @@
                                             <action selector="addDetailButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8ek-GB-B3f"/>
                                         </connections>
                                     </button>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lwe-XC-vim">
+                                        <rect key="frame" x="17" y="268" width="380" height="180"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="380" id="7Op-CF-vYc"/>
+                                            <constraint firstAttribute="height" constant="180" id="XpA-Zh-KrP"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <constraints>
@@ -408,11 +408,11 @@
                                     <constraint firstItem="eGZ-SI-lGP" firstAttribute="trailing" secondItem="Uso-rR-phm" secondAttribute="trailing" constant="100" id="8Ix-wa-oSK"/>
                                     <constraint firstItem="Uso-rR-phm" firstAttribute="leading" secondItem="eGZ-SI-lGP" secondAttribute="leading" constant="100" id="BJc-1g-EtH"/>
                                     <constraint firstItem="eGZ-SI-lGP" firstAttribute="bottom" secondItem="Uso-rR-phm" secondAttribute="bottom" constant="220" id="FFi-Ph-Zex"/>
-                                    <constraint firstItem="eGZ-SI-lGP" firstAttribute="trailing" secondItem="JG8-fV-S3t" secondAttribute="trailing" constant="17" id="FV5-ye-AR0"/>
                                     <constraint firstItem="Pq4-Uh-IRa" firstAttribute="top" secondItem="eGZ-SI-lGP" secondAttribute="top" constant="96" id="L0O-GG-F5U"/>
-                                    <constraint firstItem="JG8-fV-S3t" firstAttribute="leading" secondItem="eGZ-SI-lGP" secondAttribute="leading" constant="17" id="MB8-j9-Ptg"/>
-                                    <constraint firstItem="JG8-fV-S3t" firstAttribute="top" secondItem="Pq4-Uh-IRa" secondAttribute="bottom" constant="110" id="f3I-Q9-n78"/>
+                                    <constraint firstItem="lwe-XC-vim" firstAttribute="leading" secondItem="eGZ-SI-lGP" secondAttribute="leading" constant="17" id="ai6-Jt-TeK"/>
+                                    <constraint firstItem="lwe-XC-vim" firstAttribute="top" secondItem="Pq4-Uh-IRa" secondAttribute="bottom" constant="80" id="fcS-d7-IsN"/>
                                     <constraint firstItem="Pq4-Uh-IRa" firstAttribute="leading" secondItem="eGZ-SI-lGP" secondAttribute="leading" constant="142" id="hP7-FI-rRm"/>
+                                    <constraint firstItem="eGZ-SI-lGP" firstAttribute="trailing" secondItem="lwe-XC-vim" secondAttribute="trailing" constant="17" id="jol-3N-ElN"/>
                                 </constraints>
                                 <viewLayoutGuide key="safeArea" id="eGZ-SI-lGP"/>
                             </view>
@@ -476,7 +476,7 @@
                         <outlet property="closeDueDate" destination="iQY-N4-AB7" id="sX7-1f-CFE"/>
                         <outlet property="closePromiseDate" destination="vs0-GP-gxM" id="NtU-Dx-kTR"/>
                         <outlet property="detailButton" destination="gwR-oc-pIo" id="p01-0w-mlj"/>
-                        <outlet property="detailLongText" destination="JG8-fV-S3t" id="SnX-c6-Ils"/>
+                        <outlet property="detailLongText" destination="lwe-XC-vim" id="kXS-Zg-8sm"/>
                         <outlet property="detailView" destination="StL-ei-R7B" id="CES-Rp-gDx"/>
                         <outlet property="dueDateButton" destination="Ed0-IL-rQP" id="6e6-Rr-ErN"/>
                         <outlet property="nextButton" destination="khJ-zD-lWT" id="uLC-GL-4vc"/>
@@ -587,7 +587,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NQc-d9-apk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="684" y="86"/>
+            <point key="canvasLocation" x="552" y="86"/>
         </scene>
         <!--List View Controller-->
         <scene sceneID="Dv3-si-Dgb">
@@ -651,7 +651,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9lm-Sa-t1l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1583" y="86"/>
+            <point key="canvasLocation" x="1328" y="86"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
