@@ -4,7 +4,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+      // UserDefaults.standard.removeObject(forKey: "promiseMade")
 //入力画面ないしkeyboardの外を押したら、キーボードを閉じる処理
         //
         promiseNameText.delegate = self
@@ -305,7 +305,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     
     //詳細を保存する配列を代入する変数
-    var data: [[String:Any]] = [[:]]
+    var data: [String:Any] = [:]
     
     
     
@@ -328,7 +328,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         //        let empty = ""
         
-        data[0] = ["prName": prName, "dtl": dtl, "prDate": prDate, "dDate": dDate, "urName": urName, "prtInfoDic": prtInfoDic]
+        
+            data = ["prName": prName, "dtl": dtl, "prDate": prDate, "dDate": dDate, "urName": urName, "prtInfoDic": prtInfoDic]
         
         UserDefaults.standard.set( data, forKey: "pData")
         

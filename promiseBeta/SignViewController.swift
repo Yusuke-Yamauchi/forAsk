@@ -5,7 +5,7 @@ import Sketch
 class SignViewController: UIViewController {
     //コンプリートしたpromiseデータを代入するは辞書の配列
     var promiseUser : [[String:Any]] = [[:]]
-    
+    var data:[String:Any] = [:]
     //スクリーン宣言
     @IBOutlet weak var sketchView: SketchView!
     //クリアボタン宣言
@@ -22,13 +22,14 @@ class SignViewController: UIViewController {
         clearButton.isHidden = false
 
         
-        //トップページで入力したデータを呼び出してpromiseUserという辞書の配列に入れる
+        //トップページで入力したデータを呼び出してdataという辞書の配列に入れる
         if UserDefaults.standard.object(forKey: "pData") != nil {
-            promiseUser = UserDefaults.standard.object(forKey: "pData") as! [[String : Any]]
-        
+            data = UserDefaults.standard.object(forKey: "pData") as! [String : Any]
+            
         }
-
-        
+        if UserDefaults.standard.object(forKey: "promiseMade") != nil {
+            promiseUser = UserDefaults.standard.object(forKey: "promiseMade") as! [[String : Any]]
+        }
     }
     
     //バックボタン関数
@@ -96,23 +97,36 @@ class SignViewController: UIViewController {
         clearButton.isHidden = true
         let image = GetImage()
         sendImage = image
-        
+       
+      
         //メモ:別のストーリーボードの呼び出し方(今回は使わない)
         /*       let testVC = self.storyboard?.instantiateViewController(withIdentifier: "testVC") as! testViewController
          
          testVC.imageView  .image = image
          */
         
-        let setImage = saveImage(image:image,fileName: "サイン")
+        let setImage = saveImage(image:image,fileName: "sign")
         print (setImage)
 
         // トップページの配列辞書に空のsignを作ってそれを更新する場合は、promiseUser[0]["sign"] = setImage,
         
         
         // 配列の中にある辞書に新たなキーとその値を追加
-        promiseUser[0].updateValue(setImage, forKey: "sign")
-          
-        UserDefaults.standard.set( promiseUser, forKey: "pData")
+        //とりあえず画像は別々に保存することにした
+      //  data.updateValue(setImage, forKey: "sign")
+        
+        
+        
+        if promiseUser[0].isEmpty == false
+    {
+        promiseUser.append(data)
+        
+    }else {
+    promiseUser[0] = data
+    }
+        UserDefaults.standard.set( promiseUser, forKey: "promiseMade")
+        
+       
         
     }
     
