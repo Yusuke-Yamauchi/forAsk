@@ -126,12 +126,9 @@ class SignViewController: UIViewController {
     }
         UserDefaults.standard.set( promiseUser, forKey: "promiseMade")
         
-       
         
     }
     
 
-    
-    
 }
 

@@ -4,16 +4,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      // UserDefaults.standard.removeObject(forKey: "promiseMade")
-//入力画面ないしkeyboardの外を押したら、キーボードを閉じる処理
-        //
-        promiseNameText.delegate = self
-        detailLongText.delegate = self
-        yourNameText.delegate = self
-        partnerNameText.delegate = self
-        partnerEmailText.delegate = self
+      
+
+   
         
-        
+    
     }
     
     //全てのボタンを無効にする関数
@@ -21,7 +16,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         toListButton.isEnabled = false
         promiseNameText.isUserInteractionEnabled = false
-        
         detailButton.isEnabled = false
         promiseDateButton.isEnabled = false
         dueDateButton.isEnabled = false
@@ -36,7 +30,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         toListButton.isEnabled = true
         promiseNameText.isUserInteractionEnabled = true
-        
         detailButton.isEnabled = true
         promiseDateButton.isEnabled = true
         dueDateButton.isEnabled = true
@@ -65,7 +58,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         //detailの詳細が開いたらここに記載する説明
         //detail部分初期値
-        detailLongText.attributedPlaceholder = NSAttributedString(string: "Add the detail of your Promise...", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray])
+//        detailLongText.attributedPlaceholder = NSAttributedString(string: "Add the detail of your Promise...", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray])
         
         //partnerName部分初期値
         partnerNameText.attributedPlaceholder = NSAttributedString(string: "Add your Partner Name...", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray])
@@ -78,33 +71,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     //ViewController上のTextField宣言系
     
-    //promiseNameの宣言
+    //promiseNameの宣言とリターンで閉じるアクション
     @IBOutlet weak var promiseNameText: UITextField!
-    func promiseNameTextShouldReturn(_ promiseNameText: UITextField) -> Bool{
-        // キーボードを閉じる
-    
-        promiseNameText.resignFirstResponder()
-        return true
+    @IBAction func promiseNameText(_ sender: Any) {
     }
-    
+    //detailの幕が開くボタンの宣言
     @IBOutlet weak var detailButton: UIButton!
     //Detailの膜 宣言
     @IBOutlet weak var detailView: UIView!
-    //Detailの膜の中身
-    @IBOutlet weak var detailLongText: UITextField!{
-        didSet {
-            //textViewのtextの量に応じて、textViewの高さを決める
-            detailLongText.translatesAutoresizingMaskIntoConstraints = true
-        }
-    }
-    
-    func detailLongTextShouldReturn(_ detailLongText: UITextField) -> Bool{
-        // キーボードを閉じる
-        detailLongText.resignFirstResponder()
-        
-        return true
-    }
-    
+    //Detailの膜の中身の宣言
+    @IBOutlet weak var detailLongText: UITextView!
     //promiseDateのチェッカーを表示させるためのボタンの宣言
     @IBOutlet weak var promiseDateButton: UIButton!
     //promiseDateチェッカーの宣言
@@ -117,37 +93,23 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var changeDueDate: UIDatePicker!
     //dueDateチェッカーを消すボタン宣言
     @IBOutlet weak var closeDueDate: UIButton!
-    //yourNameの宣言
+    //yourNameの宣言とリターンで閉じるアクション
     @IBOutlet weak var yourNameText: UITextField!
-    
-    func yourNameTextShouldReturn(_ yourNameText: UITextField) -> Bool{
-        // キーボードを閉じる
-        yourNameText.resignFirstResponder()
-        
-        return true
+    @IBAction func yourNameText(_ sender: Any) {
     }
     //partnerInfoのボタンの宣言
     @IBOutlet weak var partnerButton: UIButton!
     //partnerの膜 宣言
     @IBOutlet weak var partnerView: UIView!
     //Partnerの膜の中身宣言
-    //先方の名前のテキスト
+    //先方の名前のテキストの宣言とリターンで閉じるアクション
     @IBOutlet weak var partnerNameText: UITextField!
-    func partnerNameTextShouldReturn(_ partnerNameText: UITextField) -> Bool{
-        // キーボードを閉じる
-        partnerNameText.resignFirstResponder()
-        
-        return true
-    
+    @IBAction func partnerNameText(_ sender: Any) {
     }
-    //先方のEmailのテキスト
-    @IBOutlet weak var partnerEmailText: UITextField!
-    func partnerEmailTextShouldReturn(_ partnerEmailText: UITextField) -> Bool{
-        // キーボードを閉じる
-        partnerEmailText.resignFirstResponder()
-        
-        return true
     
+    //先方のEmailのテキストの宣言とリターンで閉じるアクション
+    @IBOutlet weak var partnerEmailText: UITextField!
+    @IBAction func partnerEmailText(_ sender: Any) {
     }
     
     //移動のButton宣言系
@@ -164,31 +126,39 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     
     
-    //___________Detail部分！！！！！！！！
+
     //Detailの膜をあける透明ボタン
     @IBAction func detailButton(_ sender: Any) {
         allDisable()
         //膜を開く
         detailView.isHidden = false
     }
+    //他の部分をタップするとキーボードが閉じる。なぜならここは長文なのでり開業が必要だから
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if (self.detailLongText.isFirstResponder) {
+            self.detailLongText.resignFirstResponder()
+        }
+    }
     
     //Detailの膜を閉じる
     @IBAction func addDetailButton(_ sender: Any) {
+        
         //膜を閉じる
         detailView.isHidden = true
         allEnable()
+       
+        if detailLongText != nil {
+detailButton.setTitle(detailLongText.text, for: .normal) // ボタンのタイトル
+        }
         
-        //            if detailLongText.text != "" { detailText.text or detailButton.text = detailLongText.text の頭文字を表示
+    detailButton.setTitleColor(UIColor.black, for: .normal) // タイトルの色
+        
+        
     }
     
     
-    
-    
-    
-    
-    
     //___________PromiseDate部分！！！！！！！！
-    // 日時のチェッカーを取得してButtonに表示させるための変数
+    // 日時を取得してButtonに表示させるための変数
     var promiseDateCheker: String = ""
     
     
@@ -235,7 +205,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     //___________DueDate部分!!!!!!!!!
     // 日時のチェッカーを取得してButtonに表示させるための変数
     
-    
     var dueDateCheker: String = ""
     
     // dueDateButtonチェッカーを表示
@@ -246,7 +215,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         closeDueDate.isHidden = false
         
     }
-    
     
     
     //dueDateチェッカーの関数、日時データをとる
@@ -298,8 +266,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func addPartnerButton(_ sender: Any) {
         //PartnerInfono膜を閉じる
         partnerView.isHidden = true
+        
+        if partnerNameText != nil {
+            partnerButton.setTitle(partnerNameText.text, for: .normal) // ボタンのタイトル
+        }
+        
+        detailButton.setTitleColor(UIColor.black, for: .normal) // タイトルの色
+        
+        
     }
-    
     
     
     
@@ -310,6 +285,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func nextButton(_ sender: Any) {
+        
         
         
         //promiseName OK
@@ -326,7 +302,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         //PartnerInfoの名前とEmailを辞書で保存
         let prtInfoDic: [String: String] = ["name": partnerNameText.text!   , "email": partnerEmailText.text!]
         
-        //        let empty = ""
         
         
             data = ["prName": prName, "dtl": dtl, "prDate": prDate, "dDate": dDate, "urName": urName, "prtInfoDic": prtInfoDic]
