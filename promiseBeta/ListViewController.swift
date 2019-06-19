@@ -85,7 +85,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBAction func toTop(_ sender: Any) {
         //画面遷移 最初に戻る！！！！！
-        //その時に最初のpDataのUserDefaultを削除してもいいか？？？？
+        //その時に最初のpDataのUserDefaultを削除してもいいか？？？？画面遷移後？？？？
         self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
 
         UserDefaults.standard.removeObject(forKey: "pData")

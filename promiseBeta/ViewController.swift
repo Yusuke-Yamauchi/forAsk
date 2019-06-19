@@ -1,4 +1,6 @@
 import UIKit
+import Contacts
+
 
 class ViewController: UIViewController, UITextFieldDelegate {
     
@@ -163,7 +165,18 @@ override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     if (self.yourNameText.isFirstResponder) {
         self.yourNameText.resignFirstResponder()
     }
+    
+    if (self.partnerNameText.isFirstResponder) {
+        self.partnerNameText.resignFirstResponder()
+    }
+    
+    if (self.partnerEmailText.isFirstResponder) {
+        self.partnerEmailText.resignFirstResponder()
+    }
+    
 }
+    
+    
 
 
 
