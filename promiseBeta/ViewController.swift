@@ -192,18 +192,38 @@ class ViewController: UIViewController, UITextFieldDelegate {
     //Detailの膜を閉じる
     @IBAction func addDetailButton(_ sender: Any) {
         
+        
+        //まずはアラート
+        if detailLongText.text! == "" {
+            
+            showAlert(message:
+                "Please Fill in the Blanks")
+            
+        } else {
+            
+            //膜を閉じる
+            detailView.isHidden = true
+            allEnable()
+            
+            if detailLongText != nil {
+                detailButton.setTitle(detailLongText.text, for: .normal) // ボタンのタイトル
+            }
+            detailButton.setTitleColor(UIColor.black, for: .normal) // タイトルの色
+            
+        }
+    }
+    
+    //膜の中のバックボタン
+    @IBAction func backToTopD(_ sender: Any) {
         //膜を閉じる
         detailView.isHidden = true
         allEnable()
         
-        if detailLongText != nil {
-            detailButton.setTitle(detailLongText.text, for: .normal) // ボタンのタイトル
-        }
-        
-        detailButton.setTitleColor(UIColor.black, for: .normal) // タイトルの色
-        
-        
     }
+    
+    
+    
+    
     
     
     //___________PromiseDate部分！！！！！！！！
@@ -267,7 +287,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         dueDateCheker =      formatter.string(from: (sender as AnyObject).date)
         
-        
     }
     
     
@@ -280,7 +299,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         allEnable()
         changeDueDate.isHidden = true
         closeDueDate.isHidden = true
-        
         
     }
     
@@ -302,36 +320,40 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func partnerInfoButton(_ sender: Any) {
         //膜を開く
         partnerView.isHidden = false
+        allDisable()
     }
     
     
-    //Emailのフォームかどうかを判断する関数
-    func isValidEmail(_ string: String) -> Bool {
-        let emailRegEx = "[A-Z0-9a-z._+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
-        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        let result = emailTest.evaluate(with: string)
-        return result
-    }
-    
-    
-    
-    //
+    //Addして膜を閉じるボタン
     @IBAction func addPartnerButton(_ sender: Any) {
         
-        //PartnerInfono膜を閉じる
-        partnerView.isHidden = true
-        
-        if partnerNameText != nil {
-            partnerButton.setTitle(partnerNameText.text, for: .normal)
-            partnerButton.setTitleColor(UIColor.black, for: .normal)}
-        
+        //空白の場合のアラート
+        if
+            partnerNameText.text! == "" && partnerEmailText.text! == "" {
+            
+            showAlert(message:
+                "Please Fill in the Blanks")
+            
+        } else {
+            
+            //PartnerInfono膜を閉じる
+            partnerView.isHidden = true
+            //ボタン回復
+            allEnable()
+            
+            if partnerNameText != nil {
+                partnerButton.setTitle(partnerNameText.text, for: .normal)
+                partnerButton.setTitleColor(UIColor.black, for: .normal)}
+            
+        }
     }
     
     
-    
-    @IBAction func backToTopButton(_ sender: UIButton) {
-        //PartnerInfono膜を閉じる
+    //膜の中のバックボタン
+    @IBAction func backToTopP(_ sender: Any) {
+        
         partnerView.isHidden = true
+        allEnable()
         
     }
     
@@ -375,8 +397,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    
-    
     //アラートの関数宣言 入力
     func showAlert(message: String) {
         
@@ -402,6 +422,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
         present(alert, animated: true, completion: nil)
         
     }
+    
+    //Emailのフォームかどうかを判断する関数宣言
+    func isValidEmail(_ string: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        let result = emailTest.evaluate(with: string)
+        return result
+    }
+    
     
     
     

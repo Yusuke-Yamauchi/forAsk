@@ -349,15 +349,31 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ccn-xP-pKX">
+                                        <rect key="frame" x="40" y="46" width="48" height="42"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="3WS-Xh-xFB"/>
+                                            <constraint firstAttribute="width" constant="48" id="NVW-Pl-lym"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Back">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="backToTopD:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jnx-xy-uaQ"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstItem="eGZ-SI-lGP" firstAttribute="bottom" secondItem="Uso-rR-phm" secondAttribute="bottom" constant="220" id="FFi-Ph-Zex"/>
                                     <constraint firstItem="Pq4-Uh-IRa" firstAttribute="top" secondItem="eGZ-SI-lGP" secondAttribute="top" constant="96" id="L0O-GG-F5U"/>
+                                    <constraint firstItem="Ccn-xP-pKX" firstAttribute="leading" secondItem="eGZ-SI-lGP" secondAttribute="leading" constant="40" id="Z6p-aQ-sph"/>
                                     <constraint firstItem="Pq4-Uh-IRa" firstAttribute="centerX" secondItem="StL-ei-R7B" secondAttribute="centerX" id="ZRS-Ah-IgA"/>
                                     <constraint firstItem="lwe-XC-vim" firstAttribute="leading" secondItem="eGZ-SI-lGP" secondAttribute="leading" constant="17" id="ai6-Jt-TeK"/>
                                     <constraint firstItem="lwe-XC-vim" firstAttribute="top" secondItem="Pq4-Uh-IRa" secondAttribute="bottom" constant="80" id="fcS-d7-IsN"/>
                                     <constraint firstItem="eGZ-SI-lGP" firstAttribute="trailing" secondItem="lwe-XC-vim" secondAttribute="trailing" constant="17" id="jol-3N-ElN"/>
+                                    <constraint firstItem="Ccn-xP-pKX" firstAttribute="top" secondItem="eGZ-SI-lGP" secondAttribute="top" constant="2" id="oQL-Q3-foK"/>
                                     <constraint firstItem="Uso-rR-phm" firstAttribute="centerX" secondItem="StL-ei-R7B" secondAttribute="centerX" id="wcC-Gf-ni1"/>
                                 </constraints>
                                 <viewLayoutGuide key="safeArea" id="eGZ-SI-lGP"/>
@@ -416,7 +432,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="backToTopButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lva-I6-jPd"/>
+                                            <action selector="backToTopP:" destination="BYZ-38-t0r" eventType="touchUpInside" id="egt-La-LBx"/>
                                         </connections>
                                     </button>
                                 </subviews>
