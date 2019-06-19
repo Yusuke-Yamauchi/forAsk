@@ -18,28 +18,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TP6-v1-VeG">
-                                <rect key="frame" x="214.5" y="200" width="145" height="30"/>
-                                <color key="backgroundColor" red="0.45138680930000002" green="0.99309605359999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6uM-dd-yUT">
+                                <rect key="frame" x="40" y="46" width="48" height="42"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="145" id="Dma-0I-Oxp"/>
-                                    <constraint firstAttribute="height" constant="30" id="nm6-bd-nQu"/>
+                                    <constraint firstAttribute="width" secondItem="6uM-dd-yUT" secondAttribute="height" multiplier="48:42" id="COt-fT-D6e"/>
+                                    <constraint firstAttribute="width" constant="48" id="u4S-mA-a0Q"/>
+                                    <constraint firstAttribute="height" constant="42" id="xBs-F2-t97"/>
                                 </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
+                                <state key="normal" title="to List"/>
                                 <connections>
-                                    <action selector="promiseNameText:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="gge-s5-9qp"/>
+                                    <segue destination="m6P-xp-lae" kind="show" id="Hg5-e7-HyV"/>
                                 </connections>
-                            </textField>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Promise Maker" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q0a-CF-r4J">
                                 <rect key="frame" x="103.5" y="104" width="207" height="36"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
@@ -106,25 +96,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="khJ-zD-lWT">
-                                <rect key="frame" x="132" y="752" width="150" height="75"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="khJ-zD-lWT" secondAttribute="height" multiplier="2:1" id="Q6v-xL-Lpu"/>
-                                    <constraint firstAttribute="width" constant="150" id="h5q-H5-n5Y"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <state key="normal" title="Next"/>
-                                <connections>
-                                    <action selector="nextButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="i76-0c-4GY"/>
-                                    <segue destination="Rqe-RR-aPc" kind="show" id="bak-4k-Vap"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GBz-07-5TK">
-                                <rect key="frame" x="214.5" y="480" width="145" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TP6-v1-VeG">
+                                <rect key="frame" x="214.5" y="200" width="145" height="30"/>
                                 <color key="backgroundColor" red="0.45138680930000002" green="0.99309605359999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="6wQ-8J-Bo9"/>
-                                    <constraint firstAttribute="width" constant="145" id="YXD-Bj-4yo"/>
+                                    <constraint firstAttribute="width" constant="145" id="Dma-0I-Oxp"/>
+                                    <constraint firstAttribute="height" constant="30" id="nm6-bd-nQu"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -138,19 +115,30 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="yourNameText:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="Csq-Fg-e2V"/>
+                                    <action selector="promiseNameText:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="gge-s5-9qp"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6uM-dd-yUT">
-                                <rect key="frame" x="40" y="46" width="48" height="42"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gwR-oc-pIo">
+                                <rect key="frame" x="214.5" y="270" width="145" height="30"/>
+                                <color key="backgroundColor" red="0.45138680930000002" green="0.99309605359999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="6uM-dd-yUT" secondAttribute="height" multiplier="48:42" id="COt-fT-D6e"/>
-                                    <constraint firstAttribute="width" constant="48" id="u4S-mA-a0Q"/>
-                                    <constraint firstAttribute="height" constant="42" id="xBs-F2-t97"/>
+                                    <constraint firstAttribute="height" constant="30" id="7L5-ds-6nV"/>
+                                    <constraint firstAttribute="width" constant="145" id="qWf-TS-5Iv"/>
                                 </constraints>
-                                <state key="normal" title="to List"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="m6P-xp-lae" kind="show" id="Hg5-e7-HyV"/>
+                                    <action selector="detailButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ydr-Xz-jq7"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HRN-eQ-xw8">
@@ -193,6 +181,28 @@
                                     <action selector="dueDateButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dwA-Q6-4Qi"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GBz-07-5TK">
+                                <rect key="frame" x="214.5" y="480" width="145" height="30"/>
+                                <color key="backgroundColor" red="0.45138680930000002" green="0.99309605359999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="6wQ-8J-Bo9"/>
+                                    <constraint firstAttribute="width" constant="145" id="YXD-Bj-4yo"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="yourNameText:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="Csq-Fg-e2V"/>
+                                </connections>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="miZ-jw-B2g">
                                 <rect key="frame" x="214.5" y="550" width="145" height="30"/>
                                 <color key="backgroundColor" red="0.45138680930000002" green="0.99309605359999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -200,6 +210,7 @@
                                     <constraint firstAttribute="height" constant="30" id="DmZ-I6-1QW"/>
                                     <constraint firstAttribute="width" constant="145" id="tIw-BB-qJ0"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -215,26 +226,17 @@
                                     <action selector="partnerInfoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Va5-Bi-4HG"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gwR-oc-pIo">
-                                <rect key="frame" x="214.5" y="270" width="145" height="30"/>
-                                <color key="backgroundColor" red="0.45138680930000002" green="0.99309605359999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="khJ-zD-lWT">
+                                <rect key="frame" x="132" y="752" width="150" height="75"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="7L5-ds-6nV"/>
-                                    <constraint firstAttribute="width" constant="145" id="qWf-TS-5Iv"/>
+                                    <constraint firstAttribute="width" secondItem="khJ-zD-lWT" secondAttribute="height" multiplier="2:1" id="Q6v-xL-Lpu"/>
+                                    <constraint firstAttribute="width" constant="150" id="h5q-H5-n5Y"/>
                                 </constraints>
-                                <state key="normal">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="Next"/>
                                 <connections>
-                                    <action selector="detailButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ydr-Xz-jq7"/>
+                                    <action selector="nextButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="i76-0c-4GY"/>
+                                    <segue destination="Rqe-RR-aPc" kind="show" id="bak-4k-Vap"/>
                                 </connections>
                             </button>
                             <datePicker hidden="YES" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="gXe-es-Un6">
@@ -312,6 +314,54 @@
                                     <action selector="closePromiseDate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AIx-sE-wl1"/>
                                 </connections>
                             </button>
+                            <view hidden="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="StL-ei-R7B">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pq4-Uh-IRa">
+                                        <rect key="frame" x="107" y="140" width="200" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="dTV-w2-srQ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uso-rR-phm">
+                                        <rect key="frame" x="82" y="582" width="250" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="250" id="fMU-KP-fOG"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                        <state key="normal" title="Add Detail">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addDetailButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8ek-GB-B3f"/>
+                                        </connections>
+                                    </button>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lwe-XC-vim">
+                                        <rect key="frame" x="17" y="268" width="380" height="180"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="380" id="7Op-CF-vYc"/>
+                                            <constraint firstAttribute="height" constant="180" id="XpA-Zh-KrP"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstItem="eGZ-SI-lGP" firstAttribute="bottom" secondItem="Uso-rR-phm" secondAttribute="bottom" constant="220" id="FFi-Ph-Zex"/>
+                                    <constraint firstItem="Pq4-Uh-IRa" firstAttribute="top" secondItem="eGZ-SI-lGP" secondAttribute="top" constant="96" id="L0O-GG-F5U"/>
+                                    <constraint firstItem="Pq4-Uh-IRa" firstAttribute="centerX" secondItem="StL-ei-R7B" secondAttribute="centerX" id="ZRS-Ah-IgA"/>
+                                    <constraint firstItem="lwe-XC-vim" firstAttribute="leading" secondItem="eGZ-SI-lGP" secondAttribute="leading" constant="17" id="ai6-Jt-TeK"/>
+                                    <constraint firstItem="lwe-XC-vim" firstAttribute="top" secondItem="Pq4-Uh-IRa" secondAttribute="bottom" constant="80" id="fcS-d7-IsN"/>
+                                    <constraint firstItem="eGZ-SI-lGP" firstAttribute="trailing" secondItem="lwe-XC-vim" secondAttribute="trailing" constant="17" id="jol-3N-ElN"/>
+                                    <constraint firstItem="Uso-rR-phm" firstAttribute="centerX" secondItem="StL-ei-R7B" secondAttribute="centerX" id="wcC-Gf-ni1"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="eGZ-SI-lGP"/>
+                            </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ig6-pN-1af">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
@@ -321,7 +371,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S1s-gS-YVD">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add your Partner Name..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S1s-gS-YVD">
                                         <rect key="frame" x="20" y="292" width="374" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="PG2-I9-Age"/>
@@ -333,7 +383,7 @@
                                             <action selector="partnerNameText:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="ct7-M3-J2Z"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bpU-Yc-tbz">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add your Partner's Email Adress..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bpU-Yc-tbz">
                                         <rect key="frame" x="20" y="372" width="374" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="BUb-uR-Mbl"/>
@@ -371,50 +421,6 @@
                                     <constraint firstItem="rE7-Va-BUn" firstAttribute="leading" secondItem="8p0-yD-9qr" secondAttribute="leading" constant="56" id="y6k-VQ-9c0"/>
                                 </constraints>
                                 <viewLayoutGuide key="safeArea" id="8p0-yD-9qr"/>
-                            </view>
-                            <view hidden="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="StL-ei-R7B">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pq4-Uh-IRa">
-                                        <rect key="frame" x="142" y="140" width="130" height="48"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uso-rR-phm">
-                                        <rect key="frame" x="100" y="582" width="214" height="60"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
-                                        <state key="normal" title="Add Detail">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="addDetailButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8ek-GB-B3f"/>
-                                        </connections>
-                                    </button>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lwe-XC-vim">
-                                        <rect key="frame" x="17" y="268" width="380" height="180"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="380" id="7Op-CF-vYc"/>
-                                            <constraint firstAttribute="height" constant="180" id="XpA-Zh-KrP"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                </subviews>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <constraints>
-                                    <constraint firstItem="eGZ-SI-lGP" firstAttribute="trailing" secondItem="Pq4-Uh-IRa" secondAttribute="trailing" constant="142" id="5AV-SJ-yOu"/>
-                                    <constraint firstItem="eGZ-SI-lGP" firstAttribute="trailing" secondItem="Uso-rR-phm" secondAttribute="trailing" constant="100" id="8Ix-wa-oSK"/>
-                                    <constraint firstItem="Uso-rR-phm" firstAttribute="leading" secondItem="eGZ-SI-lGP" secondAttribute="leading" constant="100" id="BJc-1g-EtH"/>
-                                    <constraint firstItem="eGZ-SI-lGP" firstAttribute="bottom" secondItem="Uso-rR-phm" secondAttribute="bottom" constant="220" id="FFi-Ph-Zex"/>
-                                    <constraint firstItem="Pq4-Uh-IRa" firstAttribute="top" secondItem="eGZ-SI-lGP" secondAttribute="top" constant="96" id="L0O-GG-F5U"/>
-                                    <constraint firstItem="lwe-XC-vim" firstAttribute="leading" secondItem="eGZ-SI-lGP" secondAttribute="leading" constant="17" id="ai6-Jt-TeK"/>
-                                    <constraint firstItem="lwe-XC-vim" firstAttribute="top" secondItem="Pq4-Uh-IRa" secondAttribute="bottom" constant="80" id="fcS-d7-IsN"/>
-                                    <constraint firstItem="Pq4-Uh-IRa" firstAttribute="leading" secondItem="eGZ-SI-lGP" secondAttribute="leading" constant="142" id="hP7-FI-rRm"/>
-                                    <constraint firstItem="eGZ-SI-lGP" firstAttribute="trailing" secondItem="lwe-XC-vim" secondAttribute="trailing" constant="17" id="jol-3N-ElN"/>
-                                </constraints>
-                                <viewLayoutGuide key="safeArea" id="eGZ-SI-lGP"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -587,7 +593,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NQc-d9-apk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="552" y="86"/>
+            <point key="canvasLocation" x="516" y="86"/>
         </scene>
         <!--List View Controller-->
         <scene sceneID="Dv3-si-Dgb">
@@ -651,10 +657,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9lm-Sa-t1l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1328" y="86"/>
+            <point key="canvasLocation" x="1217" y="86"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Hg5-e7-HyV"/>
+        <segue reference="tXu-dc-9Hk"/>
     </inferredMetricsTieBreakers>
 </document>

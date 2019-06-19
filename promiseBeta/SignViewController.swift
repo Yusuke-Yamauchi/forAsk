@@ -121,7 +121,7 @@ class SignViewController: UIViewController {
     {
         promiseUser.append(data)
         
-    }else {
+    } else {
     promiseUser[0] = data
     }
         UserDefaults.standard.set( promiseUser, forKey: "promiseMade")

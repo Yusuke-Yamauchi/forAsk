@@ -22,7 +22,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
        // let a = promiseUserC[indexPath.row]["prName"] as! String
         
         cell.textLabel?.text = promiseUserC[indexPath.row
-            ]["prName"] as! String
+            ]["prName"] as? String
         
         return cell
         
@@ -85,7 +85,10 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBAction func toTop(_ sender: Any) {
         //画面遷移 最初に戻る！！！！！
+        //その時に最初のpDataのUserDefaultを削除してもいいか？？？？
         self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+
+        UserDefaults.standard.removeObject(forKey: "pData")
         
     }
     
