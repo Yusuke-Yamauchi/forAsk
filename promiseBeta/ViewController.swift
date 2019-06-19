@@ -241,7 +241,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         changePromiseDate.isHidden = true
         closePromiseDate.isHidden = true
         
-        
     }
     
     
@@ -319,27 +318,22 @@ class ViewController: UIViewController, UITextFieldDelegate {
     //
     @IBAction func addPartnerButton(_ sender: Any) {
         
-        //ここでEmailかどうかを判断する関数をいれている
-        if isValidEmail(partnerEmailText.text!) {
-            //PartnerInfono膜を閉じる
-            partnerView.isHidden = true
-            
-        } else {
-            
-            showAlertE(message: "Please Fill in the E-mail Correctly")
-            
-        }
-        
+        //PartnerInfono膜を閉じる
+        partnerView.isHidden = true
         
         if partnerNameText != nil {
             partnerButton.setTitle(partnerNameText.text, for: .normal)
-        }
-        
-        detailButton.setTitleColor(UIColor.black, for: .normal)
-        
+            partnerButton.setTitleColor(UIColor.black, for: .normal)}
         
     }
     
+    
+    
+    @IBAction func backToTopButton(_ sender: UIButton) {
+        //PartnerInfono膜を閉じる
+        partnerView.isHidden = true
+        
+    }
     
     
     
@@ -359,6 +353,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let prtInfoDic: [String: String] = ["name": partnerNameText.text!   , "email": partnerEmailText.text!]
         
         
+        if isValidEmail(partnerEmailText.text!) {
+            //PartnerInfono膜を閉じる
+            partnerView.isHidden = true
+            
+        } else {
+            showAlertE(message: "Please Fill in the E-mail Correctly")
+        }
+        
         //各項目がからでなければ
         if prName.isEmpty == false && dtl.isEmpty == false && prDate.isEmpty == false && dDate.isEmpty == false && urName.isEmpty == false && partnerNameText.text != "" && partnerEmailText.text != ""{
             data = ["prName": prName, "dtl": dtl, "prDate": prDate, "dDate": dDate, "urName": urName, "prtInfoDic": prtInfoDic]
@@ -373,7 +375,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    //アラート関数 入力してください
+    
+    
+    //アラートの関数宣言 入力
     func showAlert(message: String) {
         
         let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
@@ -386,7 +390,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    //アラート関数 Emailにしてください
+    //アラートの関数宣言 Emailにしてください
     func showAlertE(message: String) {
         
         let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)

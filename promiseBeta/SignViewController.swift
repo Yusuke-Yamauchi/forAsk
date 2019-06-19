@@ -149,7 +149,7 @@ func makeP() {
     let storyboard: UIStoryboard = self.storyboard!
     //ここで移動先のstoryboardを選択(StoryboradIDはList)
     let toList = storyboard.instantiateViewController(withIdentifier: "List")
-    //ここが実際に移動するコードLis
+    //ここが実際に移動するコードList
     self.present(toList, animated: true, completion: nil)
     
         //メモ:別のストーリーボードの呼び出し方(今回は使わない)
