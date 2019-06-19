@@ -366,7 +366,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func nextButton(_ sender: Any) {
-        //promiseName OK
+        
         let prName: String = promiseNameText.text!
         let dtl: String = detailLongText.text!
         let prDate = promiseDateCheker
@@ -375,66 +375,66 @@ class ViewController: UIViewController, UITextFieldDelegate {
         //PartnerInfoの名前とEmailを辞書で保存
         let prtInfoDic: [String: String] = ["name": partnerNameText.text!   , "email": partnerEmailText.text!]
         
-        
-        if isValidEmail(partnerEmailText.text!) {
-            //PartnerInfono膜を閉じる
-            partnerView.isHidden = true
+        //各項目が空であれば
+        if prName.isEmpty == true || dtl.isEmpty == true || prDate.isEmpty == true || dDate.isEmpty == true || urName.isEmpty == true && partnerNameText.text == "" || partnerEmailText.text == "" {
             
-        } else {
-            showAlertE(message: "Please Fill in the E-mail Correctly")
+            showAlert(message:
+                "Please Fill in the Blanks")
+            
         }
         
-        //各項目がからでなければ
-        if prName.isEmpty == false && dtl.isEmpty == false && prDate.isEmpty == false && dDate.isEmpty == false && urName.isEmpty == false && partnerNameText.text != "" && partnerEmailText.text != ""{
-            data = ["prName": prName, "dtl": dtl, "prDate": prDate, "dDate": dDate, "urName": urName, "prtInfoDic": prtInfoDic]
+        if isValidEmail(partnerEmailText.text!) {
             
             UserDefaults.standard.set( data, forKey: "pData")
             
         } else {
-            showAlert(message:
-                "Please Fill in the Blanks")
+            
+            showAlertE(message: "Please Fill in the E-mail Correctly")
+            
         }
-        
-    }
+
+}
+
+
+
+
+//アラートの関数宣言 入力
+func showAlert(message: String) {
     
+    let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
     
-    //アラートの関数宣言 入力
-    func showAlert(message: String) {
-        
-        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
-        
-        let close = UIAlertAction(title: "Close", style: .cancel, handler: nil)
-        
-        alert.addAction(close)
-        
-        present(alert, animated: true, completion: nil)
-        
-    }
+    let close = UIAlertAction(title: "Close", style: .cancel, handler: nil)
     
-    //アラートの関数宣言 Emailにしてください
-    func showAlertE(message: String) {
-        
-        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
-        
-        let close = UIAlertAction(title: "Close", style: .cancel, handler: nil)
-        
-        alert.addAction(close)
-        
-        present(alert, animated: true, completion: nil)
-        
-    }
+    alert.addAction(close)
     
-    //Emailのフォームかどうかを判断する関数宣言
-    func isValidEmail(_ string: String) -> Bool {
-        let emailRegEx = "[A-Z0-9a-z._+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
-        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        let result = emailTest.evaluate(with: string)
-        return result
-    }
+    present(alert, animated: true, completion: nil)
     
+}
+
+//アラートの関数宣言 Emailにしてください
+func showAlertE(message: String) {
     
+    let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
     
+    let close = UIAlertAction(title: "Close", style: .cancel, handler: nil)
     
+    alert.addAction(close)
     
+    present(alert, animated: true, completion: nil)
+    
+}
+
+//Emailのフォームかどうかを判断する関数宣言
+func isValidEmail(_ string: String) -> Bool {
+    let emailRegEx = "[A-Z0-9a-z._+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
+    let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+    let result = emailTest.evaluate(with: string)
+    return result
+}
+
+
+
+
+
 }
 
