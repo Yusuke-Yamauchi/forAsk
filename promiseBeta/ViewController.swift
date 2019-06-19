@@ -151,7 +151,6 @@ func allEnable() {
 @IBOutlet weak var nextButton: UIButton!
 
 
-
 //他の部分をタップするとキーボードが閉じる機能
 override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     if (self.detailLongText.isFirstResponder) {
@@ -364,9 +363,6 @@ func showAlert(message: String) {
     present(alert, animated: true, completion: nil)
     
 }
-
-
-
 
 
 

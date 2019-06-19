@@ -528,8 +528,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="setPromiseButton:" destination="Rqe-RR-aPc" eventType="touchUpInside" id="iJf-ik-IQG"/>
-                                    <segue destination="m6P-xp-lae" kind="show" id="tXu-dc-9Hk"/>
+                                    <action selector="makePAlert:" destination="Rqe-RR-aPc" eventType="touchUpInside" id="aME-dT-eLS"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AWb-j0-S5F">
@@ -598,7 +597,7 @@
         <!--List View Controller-->
         <scene sceneID="Dv3-si-Dgb">
             <objects>
-                <viewController id="m6P-xp-lae" customClass="ListViewController" customModule="promiseBeta" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="List" id="m6P-xp-lae" customClass="ListViewController" customModule="promiseBeta" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sNi-U2-Fhm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -660,7 +659,4 @@
             <point key="canvasLocation" x="1217" y="86"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="Hg5-e7-HyV"/>
-    </inferredMetricsTieBreakers>
 </document>
