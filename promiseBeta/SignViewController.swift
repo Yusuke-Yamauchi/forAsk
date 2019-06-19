@@ -145,10 +145,12 @@ func makeP() {
         let image = GetImage()
         sendImage = image
         
+    
     //まずは、同じstororyboard内であることをここで定義
     let storyboard: UIStoryboard = self.storyboard!
     //ここで移動先のstoryboardを選択(StoryboradIDはList)
     let toList = storyboard.instantiateViewController(withIdentifier: "List")
+    
     //ここが実際に移動するコードList
     self.present(toList, animated: true, completion: nil)
     

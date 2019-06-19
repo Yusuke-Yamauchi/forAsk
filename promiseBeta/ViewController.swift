@@ -213,6 +213,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    
     //膜の中のバックボタン
     @IBAction func backToTopD(_ sender: Any) {
         //膜を閉じる
