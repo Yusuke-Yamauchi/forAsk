@@ -23,7 +23,7 @@
 	<key>NSContactsUsageDescription</key>
 	<string>Promise Request Access to Contacts : 連絡帳にアクセスします</string>
 	<key>UILaunchStoryboardName</key>
-	<string>Main</string>
+	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>

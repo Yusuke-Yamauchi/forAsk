@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oWQ-Ok-7eU">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -26,7 +26,7 @@
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="tLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Y4Y-Mn-Q76">
-                                <rect key="frame" x="107" y="348" width="200" height="200"/>
+                                <rect key="frame" x="107" y="244" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="DLz-dW-Ch8"/>
                                     <constraint firstAttribute="width" secondItem="Y4Y-Mn-Q76" secondAttribute="height" multiplier="1:1" id="NEL-dI-UyX"/>
@@ -38,7 +38,7 @@
                         <constraints>
                             <constraint firstItem="Y4Y-Mn-Q76" firstAttribute="centerX" secondItem="Dxp-xl-VBn" secondAttribute="centerX" id="4Hz-Nu-kgZ"/>
                             <constraint firstItem="M5w-H2-M4p" firstAttribute="centerX" secondItem="Dxp-xl-VBn" secondAttribute="centerX" id="Ru6-3E-Jud"/>
-                            <constraint firstItem="Y4Y-Mn-Q76" firstAttribute="centerY" secondItem="Dxp-xl-VBn" secondAttribute="centerY" id="d5g-IM-Ov9"/>
+                            <constraint firstItem="Y4Y-Mn-Q76" firstAttribute="top" secondItem="FBd-vg-54a" secondAttribute="top" constant="200" id="YHY-bw-ldb"/>
                             <constraint firstItem="FBd-vg-54a" firstAttribute="bottom" secondItem="M5w-H2-M4p" secondAttribute="bottom" constant="10" id="kDR-xf-GgI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FBd-vg-54a"/>
@@ -49,7 +49,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qpa-ub-hlh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1348" y="86"/>
+            <point key="canvasLocation" x="-893" y="86"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">

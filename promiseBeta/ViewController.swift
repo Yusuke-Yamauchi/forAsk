@@ -4,10 +4,8 @@ import Contacts
 
 class ViewController: UIViewController, UITextFieldDelegate {
     
-    
-    var fromListView: Bool = false
-    //ロゴのimageViewを入れる変数
-    var logoImageView: UIImageView!
+//    //ロゴのimageViewを入れる変数
+//    var logoImageView: UIImageView!
     
     //立ち上がりの処理
     override func viewDidLoad() {
@@ -41,7 +39,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         
         
-        if fromListView {
+        
             promiseNameText.text! =  ""
             detailButton.setTitle("", for: .normal)
             detailLongText.text! =  ""
@@ -58,19 +56,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
             partnerEmailText.text =  ""
             
             
-            
-            
-            
             //                placeholderを再設置、textViewのPlaceHolderが難しい
             
             
             partnerNameText.attributedPlaceholder = NSAttributedString(string: "Add your Partner Name...", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray])
             
             partnerEmailText.attributedPlaceholder = NSAttributedString(string: "Add your Partner's Email Adress...", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray])
-            
-        }
         
-        fromListView = false
+       
         
     }
     

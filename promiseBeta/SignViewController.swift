@@ -29,7 +29,7 @@ class SignViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         clearButton.isHidden = false
         
-        //トップページで入力したデータを呼び出してdataという辞書の配列に入れる
+//トップページで入力したデータを呼び出してdataという辞書の配列に入れる
         if UserDefaults.standard.object(forKey: "pData") != nil {
             data = UserDefaults.standard.object(forKey: "pData") as! [String : Any]
         }
