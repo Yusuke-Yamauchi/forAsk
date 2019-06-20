@@ -96,15 +96,17 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    //アラート関数
+    func makePAlert(message: String) {
+        
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        
+        let close = UIAlertAction(title: "Close", style: .cancel, handler: nil)
+        
+        alert.addAction(close)
+        
+        present(alert, animated: true, completion: nil)
+        
+    }
     
 }

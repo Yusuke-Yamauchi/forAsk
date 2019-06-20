@@ -349,15 +349,31 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ccn-xP-pKX">
+                                        <rect key="frame" x="40" y="46" width="48" height="42"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="3WS-Xh-xFB"/>
+                                            <constraint firstAttribute="width" constant="48" id="NVW-Pl-lym"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Back">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="backToTopD:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jnx-xy-uaQ"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstItem="eGZ-SI-lGP" firstAttribute="bottom" secondItem="Uso-rR-phm" secondAttribute="bottom" constant="220" id="FFi-Ph-Zex"/>
                                     <constraint firstItem="Pq4-Uh-IRa" firstAttribute="top" secondItem="eGZ-SI-lGP" secondAttribute="top" constant="96" id="L0O-GG-F5U"/>
+                                    <constraint firstItem="Ccn-xP-pKX" firstAttribute="leading" secondItem="eGZ-SI-lGP" secondAttribute="leading" constant="40" id="Z6p-aQ-sph"/>
                                     <constraint firstItem="Pq4-Uh-IRa" firstAttribute="centerX" secondItem="StL-ei-R7B" secondAttribute="centerX" id="ZRS-Ah-IgA"/>
                                     <constraint firstItem="lwe-XC-vim" firstAttribute="leading" secondItem="eGZ-SI-lGP" secondAttribute="leading" constant="17" id="ai6-Jt-TeK"/>
                                     <constraint firstItem="lwe-XC-vim" firstAttribute="top" secondItem="Pq4-Uh-IRa" secondAttribute="bottom" constant="80" id="fcS-d7-IsN"/>
                                     <constraint firstItem="eGZ-SI-lGP" firstAttribute="trailing" secondItem="lwe-XC-vim" secondAttribute="trailing" constant="17" id="jol-3N-ElN"/>
+                                    <constraint firstItem="Ccn-xP-pKX" firstAttribute="top" secondItem="eGZ-SI-lGP" secondAttribute="top" constant="2" id="oQL-Q3-foK"/>
                                     <constraint firstItem="Uso-rR-phm" firstAttribute="centerX" secondItem="StL-ei-R7B" secondAttribute="centerX" id="wcC-Gf-ni1"/>
                                 </constraints>
                                 <viewLayoutGuide key="safeArea" id="eGZ-SI-lGP"/>
@@ -405,12 +421,28 @@
                                             <action selector="addPartnerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ikN-XI-cOL"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uQG-QQ-GjL">
+                                        <rect key="frame" x="40" y="46" width="48" height="42"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="U1N-Pe-h9q"/>
+                                            <constraint firstAttribute="width" constant="48" id="h7u-nO-dj0"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Back">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="backToTopP:" destination="BYZ-38-t0r" eventType="touchUpInside" id="egt-La-LBx"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="AVj-cC-Bem" firstAttribute="top" secondItem="8p0-yD-9qr" secondAttribute="top" constant="90" id="0Ri-Mt-HK3"/>
                                     <constraint firstItem="8p0-yD-9qr" firstAttribute="bottom" secondItem="rE7-Va-BUn" secondAttribute="bottom" constant="220" id="13A-DE-HUJ"/>
                                     <constraint firstItem="S1s-gS-YVD" firstAttribute="top" secondItem="AVj-cC-Bem" secondAttribute="bottom" constant="110" id="53v-LC-fvV"/>
+                                    <constraint firstItem="uQG-QQ-GjL" firstAttribute="top" secondItem="8p0-yD-9qr" secondAttribute="top" constant="2" id="Bhy-h6-kAN"/>
+                                    <constraint firstItem="uQG-QQ-GjL" firstAttribute="leading" secondItem="8p0-yD-9qr" secondAttribute="leading" constant="40" id="Ghv-A6-1eZ"/>
                                     <constraint firstItem="8p0-yD-9qr" firstAttribute="trailing" secondItem="rE7-Va-BUn" secondAttribute="trailing" constant="56" id="HGL-wC-xnP"/>
                                     <constraint firstItem="AVj-cC-Bem" firstAttribute="centerX" secondItem="Ig6-pN-1af" secondAttribute="centerX" id="HRg-ZP-sP2"/>
                                     <constraint firstItem="S1s-gS-YVD" firstAttribute="leading" secondItem="8p0-yD-9qr" secondAttribute="leading" constant="20" id="KDI-Be-JYo"/>
@@ -528,8 +560,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="setPromiseButton:" destination="Rqe-RR-aPc" eventType="touchUpInside" id="iJf-ik-IQG"/>
-                                    <segue destination="m6P-xp-lae" kind="show" id="tXu-dc-9Hk"/>
+                                    <action selector="makePAlert:" destination="Rqe-RR-aPc" eventType="touchUpInside" id="aME-dT-eLS"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AWb-j0-S5F">
@@ -598,7 +629,7 @@
         <!--List View Controller-->
         <scene sceneID="Dv3-si-Dgb">
             <objects>
-                <viewController id="m6P-xp-lae" customClass="ListViewController" customModule="promiseBeta" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="List" id="m6P-xp-lae" customClass="ListViewController" customModule="promiseBeta" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sNi-U2-Fhm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -660,7 +691,4 @@
             <point key="canvasLocation" x="1217" y="86"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="Hg5-e7-HyV"/>
-    </inferredMetricsTieBreakers>
 </document>
