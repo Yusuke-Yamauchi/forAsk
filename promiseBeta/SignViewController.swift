@@ -169,7 +169,6 @@ class SignViewController: UIViewController {
         //  data.updateValue(setImage, forKey: "sign")
         
         
-        
         if promiseUser[0].isEmpty == false
         {
             promiseUser.append(data)
