@@ -9,11 +9,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         
-        //全てのUserDefaultを削除
-        //        let domain = Bundle.main.bundleIdentifier!
-        //        UserDefaults.standard.removePersistentDomain(forName: domain)
-        //        UserDefaults.standard.synchronize()
-        
+//全てのUserDefaultを削除
+                let domain = Bundle.main.bundleIdentifier!
+                UserDefaults.standard.removePersistentDomain(forName: domain)
+                UserDefaults.standard.synchronize()
+
     }
     
     

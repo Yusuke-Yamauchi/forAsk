@@ -88,13 +88,16 @@ class SignViewController: UIViewController {
         let documentsURL = FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask)[0]
         let fileURL = documentsURL.appendingPathComponent(fileName)
         
-        print(fileURL)
+        
         do {
             try pngImageData!.write(to: fileURL)
+            let url:String = fileURL.absoluteString
+            data.updateValue(url, forKey: "signPath")
         } catch {
             //エラー処理
             return false
         }
+      
         return true
     }
     
@@ -159,15 +162,15 @@ func makeP() {
          */
         
         let setImage = saveImage(image:image,fileName: "sign")
-        print (setImage)
+    
         
         // トップページの配列辞書に空のsignを作ってそれを更新する場合は、promiseUser[0]["sign"] = setImage,
         
         
         // 配列の中にある辞書に新たなキーとその値を追加
         //とりあえず画像は別々に保存することにした
-        //  data.updateValue(setImage, forKey: "sign")
-        
+        //data.updateValue(setImage, forKey: "sign")
+  
         
         
         if promiseUser[0].isEmpty == false

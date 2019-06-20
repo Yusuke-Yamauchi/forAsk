@@ -17,9 +17,9 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "proCell", for: indexPath)
-   
-    //配列の中の辞書のキーをとりだして定数aに入れる
-       // let a = promiseUserC[indexPath.row]["prName"] as! String
+        
+        //配列の中の辞書のキーをとりだして定数aに入れる
+        // let a = promiseUserC[indexPath.row]["prName"] as! String
         
         cell.textLabel?.text = promiseUserC[indexPath.row
             ]["prName"] as? String
@@ -68,7 +68,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             self.tableView.reloadData()
             
-            print(promiseUserC)
+            
         }
         
     }
@@ -87,7 +87,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         //画面遷移 最初に戻る！！！！！
         //その時に最初のpDataのUserDefaultを削除してもいいか？？？？画面遷移後？？？？
         self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
-
+        
         UserDefaults.standard.removeObject(forKey: "pData")
         
     }
@@ -108,5 +108,33 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         present(alert, animated: true, completion: nil)
         
     }
+    
+    //segueで移動する際に値を渡す
+    var selectedRow = 0
+    
+    
+    
+    //セルを選んだ際に実行するfunc
+   
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            selectedRow = indexPath.row
+            
+            performSegue(withIdentifier: "segueToSendPDF", sender: nil)
+            print(selectedRow)
+            
+        }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        
+        print(selectedRow)
+        
+        
+        if segue.identifier == "segueToSendPDF" {
+            let sendPDFVC = segue.destination as! sendPDFViewController
+            sendPDFVC.promiseSelected = promiseUserC[selectedRow]
+        }
+    }
+        
     
 }
