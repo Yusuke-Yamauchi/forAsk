@@ -23,12 +23,13 @@ class sendPDFViewController: UIViewController {
     //ListViewControllerから値を受け取る
     var promiseSelected:[String:Any] = [:]
     
+    @IBOutlet weak var textLabel: UILabel!
     //PDFに保存したいものが乗っているView
     @IBOutlet weak var promiseView: UIView!
     
     @IBOutlet weak var signImageView: UIImageView!
     
-    @IBOutlet weak var promiseText: UITextView!
+
     
     
     @IBAction func sendPromiseButton(_ sender: UIButton) {
