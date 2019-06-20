@@ -19,19 +19,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BCC1" translatesAutoresizingMaskIntoConstraints="NO" id="6w2-An-1dz">
-                                <rect key="frame" x="167" y="787" width="80" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="BYG-bS-yMq"/>
-                                    <constraint firstAttribute="height" constant="80" id="zkf-i2-dlj"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6w2-An-1dz" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="5" id="5jG-Cc-2g7"/>
-                            <constraint firstItem="6w2-An-1dz" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="stm-gU-8kk"/>
-                            <constraint firstItem="6w2-An-1dz" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="5" id="xvG-Go-qaq"/>
-                            <constraint firstItem="6w2-An-1dz" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="z2N-O2-cfP"/>
+                            <constraint firstItem="6w2-An-1dz" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="1q4-tU-SkE"/>
+                            <constraint firstAttribute="bottom" secondItem="6w2-An-1dz" secondAttribute="bottom" id="65z-So-Cx7"/>
+                            <constraint firstItem="6w2-An-1dz" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="8TZ-G8-wft"/>
+                            <constraint firstItem="6w2-An-1dz" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="ZDL-2I-OuK"/>
+                            <constraint firstItem="6w2-An-1dz" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="bnw-zD-qx7"/>
+                            <constraint firstAttribute="trailing" secondItem="6w2-An-1dz" secondAttribute="trailing" id="r1R-d7-rH9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
