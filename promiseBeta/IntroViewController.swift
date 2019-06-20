@@ -40,11 +40,11 @@ class IntroViewController: UIViewController {
         
         
         //拡大させて、消えるアニメーション
-        UIView.animate(withDuration: 0.2,
+        UIView.animate(withDuration: 0.7,
                        delay: 1.3,
                        options: UIView.AnimationOptions.curveEaseOut,
                        animations: { () in
-                        self.titleLogo.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+                        self.titleLogo.transform = CGAffineTransform(scaleX: 2, y: 2)
                         self.titleLogo.alpha = 0
         }, completion: { (Bool) in
             

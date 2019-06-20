@@ -17,9 +17,9 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "proCell", for: indexPath)
-   
-    //配列の中の辞書のキーをとりだして定数aに入れる
-       // let a = promiseUserC[indexPath.row]["prName"] as! String
+        
+        //配列の中の辞書のキーをとりだして定数aに入れる
+        // let a = promiseUserC[indexPath.row]["prName"] as! String
         
         cell.textLabel?.text = promiseUserC[indexPath.row
             ]["prName"] as? String
@@ -84,10 +84,14 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     @IBAction func toTop(_ sender: Any) {
-//        //画面遷移 最初に戻る！！！！！
-
-        self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
-
+        //画面遷移 最初に戻る！！！！！
+        //同じストーリーボード
+        let storyboard: UIStoryboard = self.storyboard!
+        //ここで移動先のstoryboardを選択(StoryboradID)
+        let toList = storyboard.instantiateViewController(withIdentifier: "ViewController")
+        self.present(toList, animated: false, completion: nil)
+        
+        
         UserDefaults.standard.removeObject(forKey: "pData")
         
     }
