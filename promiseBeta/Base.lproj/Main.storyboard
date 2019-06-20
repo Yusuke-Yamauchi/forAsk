@@ -10,10 +10,51 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Intro View Controller-->
+        <scene sceneID="Z9d-pf-bDA">
+            <objects>
+                <viewController storyboardIdentifier="Intro" id="oWQ-Ok-7eU" customClass="IntroViewController" customModule="promiseBeta" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Dxp-xl-VBn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BCC3" translatesAutoresizingMaskIntoConstraints="NO" id="M5w-H2-M4p">
+                                <rect key="frame" x="132" y="702" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="M5w-H2-M4p" secondAttribute="height" multiplier="1:1" id="Wrp-sd-RGi"/>
+                                    <constraint firstAttribute="height" constant="150" id="en9-Qd-rSf"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="tLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Y4Y-Mn-Q76">
+                                <rect key="frame" x="107" y="348" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="DLz-dW-Ch8"/>
+                                    <constraint firstAttribute="width" secondItem="Y4Y-Mn-Q76" secondAttribute="height" multiplier="1:1" id="NEL-dI-UyX"/>
+                                    <constraint firstAttribute="width" constant="200" id="Tmh-AR-FcD"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Y4Y-Mn-Q76" firstAttribute="centerX" secondItem="Dxp-xl-VBn" secondAttribute="centerX" id="4Hz-Nu-kgZ"/>
+                            <constraint firstItem="M5w-H2-M4p" firstAttribute="centerX" secondItem="Dxp-xl-VBn" secondAttribute="centerX" id="Ru6-3E-Jud"/>
+                            <constraint firstItem="Y4Y-Mn-Q76" firstAttribute="centerY" secondItem="Dxp-xl-VBn" secondAttribute="centerY" id="d5g-IM-Ov9"/>
+                            <constraint firstItem="FBd-vg-54a" firstAttribute="bottom" secondItem="M5w-H2-M4p" secondAttribute="bottom" constant="10" id="kDR-xf-GgI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="FBd-vg-54a"/>
+                    </view>
+                    <connections>
+                        <outlet property="titleLogo" destination="Y4Y-Mn-Q76" id="gzF-lL-UjV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qpa-ub-hlh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1348" y="86"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="VC" id="BYZ-38-t0r" customClass="ViewController" customModule="promiseBeta" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="promiseBeta" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -688,7 +729,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9lm-Sa-t1l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1217" y="86"/>
+            <point key="canvasLocation" x="1229" y="86"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="BCC3" width="5000" height="5000"/>
+    </resources>
 </document>

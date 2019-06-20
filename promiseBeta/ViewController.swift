@@ -4,17 +4,20 @@ import Contacts
 
 class ViewController: UIViewController, UITextFieldDelegate {
     
+    
+    var fromListView: Bool = false
+    //ロゴのimageViewを入れる変数
+    var logoImageView: UIImageView!
+    
     //立ち上がりの処理
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //バグ対応用の全てのUserDefaultを削除コマンド。普段はコメントアウト。
-                let domain = Bundle.main.bundleIdentifier!
-                UserDefaults.standard.removePersistentDomain(forName: domain)
-                UserDefaults.standard.synchronize()
         
-        
-        
+        //エラーの時のUserdefaults
+//        UserDefaults.standard.removeObject(forKey: "pData")
+//        UserDefaults.standard.removeObject(forKey: "promiseMade")
+//        
         
         //Promisedateチェッカーを白にしてバックを不透明にする
         //        https://wayohoo.com/programming/swift/how-to-change-text-color-for-uidatepicker.html
@@ -29,8 +32,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         changeDueDate.setValue(false, forKey: "highlightsToday")
         
-        
-        
     }
     
     
@@ -38,12 +39,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     //画面遷移してきた時の処理 toTop から戻ってきた時、初期化
     override func viewDidAppear(_ animated: Bool) {
         
-//   //遷移元を判別
-//        let count = (self.navigationController?.viewControllers.count)! - 2
-//        if (self.navigationController?.viewControllers[count] as? [ListViewController]) != nil {
-//        } else {
-//
         
+        
+        if fromListView {
             promiseNameText.text! =  ""
             detailButton.setTitle("", for: .normal)
             detailLongText.text! =  ""
@@ -60,16 +58,19 @@ class ViewController: UIViewController, UITextFieldDelegate {
             partnerEmailText.text =  ""
             
             
-
+            
+            
+            
+            //                placeholderを再設置、textViewのPlaceHolderが難しい
+            
+            
+            partnerNameText.attributedPlaceholder = NSAttributedString(string: "Add your Partner Name...", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray])
+            
+            partnerEmailText.attributedPlaceholder = NSAttributedString(string: "Add your Partner's Email Adress...", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray])
+            
+        }
         
-        
-        //                placeholderを再設置、textViewのPlaceHolderが難しい
-        
-        
-        partnerNameText.attributedPlaceholder = NSAttributedString(string: "Add your Partner Name...", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray])
-        
-        partnerEmailText.attributedPlaceholder = NSAttributedString(string: "Add your Partner's Email Adress...", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray])
-        
+        fromListView = false
         
     }
     
