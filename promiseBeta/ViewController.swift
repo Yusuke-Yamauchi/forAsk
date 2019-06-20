@@ -8,52 +8,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        //全てのUserDefaultを削除
-        //        let domain = Bundle.main.bundleIdentifier!
-        //        UserDefaults.standard.removePersistentDomain(forName: domain)
-        //        UserDefaults.standard.synchronize()
-        
-    }
-    
-    
-    //画面遷移してきた時の処理 toTop から戻ってきた時、初期化
-    override func viewDidAppear(_ animated: Bool) {
-        
-        
-        promiseNameText.text! =  ""
-        detailButton.setTitle("", for: .normal)
-        detailLongText.text! =  ""
-        
-        
-        yourNameText.text! =  ""
-        
-        
-        promiseDateButton.setTitle("", for: .normal)
-        dueDateButton.setTitle("", for: .normal)
-        
-        partnerButton.setTitle("", for: .normal)
-        partnerNameText.text =  ""
-        partnerEmailText.text =  ""
+        //バグ対応用の全てのUserDefaultを削除コマンド。普段はコメントアウト。
+                let domain = Bundle.main.bundleIdentifier!
+                UserDefaults.standard.removePersistentDomain(forName: domain)
+                UserDefaults.standard.synchronize()
         
         
         
-        //placeholderを再設置
-        
-        
-        //         detailLongText.attributedPlaceholder = NSAttributedString(string: "Add the detail of your Promise", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray])
-        
-        
-        partnerNameText.attributedPlaceholder = NSAttributedString(string: "Add your Partner Name...", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray])
-        
-        partnerEmailText.attributedPlaceholder = NSAttributedString(string: "Add your Partner's Email Adress...", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray])
-        
-    }
-    
-    
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
         
         //Promisedateチェッカーを白にしてバックを不透明にする
         //        https://wayohoo.com/programming/swift/how-to-change-text-color-for-uidatepicker.html
@@ -69,9 +30,48 @@ class ViewController: UIViewController, UITextFieldDelegate {
         changeDueDate.setValue(false, forKey: "highlightsToday")
         
         
+        
     }
     
     
+    
+    //画面遷移してきた時の処理 toTop から戻ってきた時、初期化
+    override func viewDidAppear(_ animated: Bool) {
+        
+//   //遷移元を判別
+//        let count = (self.navigationController?.viewControllers.count)! - 2
+//        if (self.navigationController?.viewControllers[count] as? [ListViewController]) != nil {
+//        } else {
+//
+        
+            promiseNameText.text! =  ""
+            detailButton.setTitle("", for: .normal)
+            detailLongText.text! =  ""
+            
+            
+            yourNameText.text! =  ""
+            
+            
+            promiseDateButton.setTitle("", for: .normal)
+            dueDateButton.setTitle("", for: .normal)
+            
+            partnerButton.setTitle("", for: .normal)
+            partnerNameText.text =  ""
+            partnerEmailText.text =  ""
+            
+            
+
+        
+        
+        //                placeholderを再設置、textViewのPlaceHolderが難しい
+        
+        
+        partnerNameText.attributedPlaceholder = NSAttributedString(string: "Add your Partner Name...", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray])
+        
+        partnerEmailText.attributedPlaceholder = NSAttributedString(string: "Add your Partner's Email Adress...", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray])
+        
+        
+    }
     
     
     //全てのボタンを無効にする関数
@@ -376,7 +376,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let prtInfoDic: [String: String] = ["name": partnerNameText.text!   , "email": partnerEmailText.text!]
         
         //各項目が空であれば
-        if prName.isEmpty == true || dtl.isEmpty == true || prDate.isEmpty == true || dDate.isEmpty == true || urName.isEmpty == true && partnerNameText.text == "" || partnerEmailText.text == "" {
+        if prName.isEmpty == true || dtl.isEmpty == true || prDate.isEmpty == true || dDate.isEmpty == true || urName.isEmpty == true || partnerNameText.text == "" || partnerEmailText.text == "" {
             
             showAlert(message:
                 "Please Fill in the Blanks")
@@ -392,49 +392,49 @@ class ViewController: UIViewController, UITextFieldDelegate {
             showAlertE(message: "Please Fill in the E-mail Correctly")
             
         }
-
-}
-
-
-
-
-//アラートの関数宣言 入力
-func showAlert(message: String) {
+        
+    }
     
-    let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
     
-    let close = UIAlertAction(title: "Close", style: .cancel, handler: nil)
     
-    alert.addAction(close)
     
-    present(alert, animated: true, completion: nil)
+    //アラートの関数宣言 入力
+    func showAlert(message: String) {
+        
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        
+        let close = UIAlertAction(title: "Close", style: .cancel, handler: nil)
+        
+        alert.addAction(close)
+        
+        present(alert, animated: true, completion: nil)
+        
+    }
     
-}
-
-//アラートの関数宣言 Emailにしてください
-func showAlertE(message: String) {
+    //アラートの関数宣言 Emailにしてください
+    func showAlertE(message: String) {
+        
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        
+        let close = UIAlertAction(title: "Close", style: .cancel, handler: nil)
+        
+        alert.addAction(close)
+        
+        present(alert, animated: true, completion: nil)
+        
+    }
     
-    let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+    //Emailのフォームかどうかを判断する関数宣言
+    func isValidEmail(_ string: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        let result = emailTest.evaluate(with: string)
+        return result
+    }
     
-    let close = UIAlertAction(title: "Close", style: .cancel, handler: nil)
     
-    alert.addAction(close)
     
-    present(alert, animated: true, completion: nil)
     
-}
-
-//Emailのフォームかどうかを判断する関数宣言
-func isValidEmail(_ string: String) -> Bool {
-    let emailRegEx = "[A-Z0-9a-z._+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
-    let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-    let result = emailTest.evaluate(with: string)
-    return result
-}
-
-
-
-
-
+    
 }
 
