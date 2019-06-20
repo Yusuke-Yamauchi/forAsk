@@ -17,13 +17,19 @@ class sendPDFViewController: UIViewController {
         let pathURL = URL(string:promiseSelected["signPath"] as! String)
         let image = UIImage(contentsOfFile:pathURL!.path)
             signImageView.image = image
+      //テキストビューを編集不能にする
+        textView.isEditable = false
+        textView.isSelectable = false
         
      
     }
     //ListViewControllerから値を受け取る
     var promiseSelected:[String:Any] = [:]
     
-    @IBOutlet weak var textLabel: UILabel!
+    @IBOutlet weak var textView: UITextView!
+    
+   
+   
     //PDFに保存したいものが乗っているView
     @IBOutlet weak var promiseView: UIView!
     
