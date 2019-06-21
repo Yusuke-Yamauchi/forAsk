@@ -17,9 +17,9 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "proCell", for: indexPath)
-   
-    //配列の中の辞書のキーをとりだして定数aに入れる
-       // let a = promiseUserC[indexPath.row]["prName"] as! String
+        
+        //配列の中の辞書のキーをとりだして定数aに入れる
+        // let a = promiseUserC[indexPath.row]["prName"] as! String
         
         cell.textLabel?.text = promiseUserC[indexPath.row
             ]["prName"] as? String
@@ -32,9 +32,35 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     // セルをデリートする機能を付け加える
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete {
+            //消す前にまずpathを取得
+            let pathURL = URL(string:promiseUserC[indexPath.row]["signPath"] as! String)
+            let pdfPathURL = URL(string:promiseUserC[indexPath.row]["pdfPath"] as! String)
             promiseUserC.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
             UserDefaults.standard.set( promiseUserC, forKey: "promiseMade")
+            //サイン画像ファイルとPDFも同時に削除する
+           
+            //サイン画像を削除
+            do {
+                
+                try FileManager.default.removeItem( atPath: pathURL!.path )
+                
+            } catch {
+                
+                //エラー処理
+                print("error")
+                
+            }
+            do {
+                
+                try FileManager.default.removeItem( atPath: pdfPathURL!.path )
+                
+            } catch {
+                
+                //エラー処理
+                print("pdfがありません")
+                
+            }
         }
     }
     
@@ -68,7 +94,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             self.tableView.reloadData()
             
-            print(promiseUserC)
+            
         }
         
     }
@@ -87,7 +113,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         //画面遷移 最初に戻る！！！！！
         //その時に最初のpDataのUserDefaultを削除してもいいか？？？？画面遷移後？？？？
         self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
-
+        
         UserDefaults.standard.removeObject(forKey: "pData")
         
     }
@@ -109,4 +135,31 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
-}
+    //segueで移動する際に値を渡す
+    var selectedRow = 0
+    
+    
+    
+    //セルを選んだ際に実行するfunc
+   
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            selectedRow = indexPath.row
+            UserDefaults.standard.set(selectedRow, forKey: "selectedRow")
+        
+            
+        }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//
+//
+//        print(selectedRow)
+//
+//
+//        if segue.identifier == "segueToSendPDF" {
+//            let sendPDFVC = segue.destination as! sendPDFViewController
+//            sendPDFVC.promiseSelected = promiseUserC[selectedRow]
+//        }
+    }
+        
+    
+

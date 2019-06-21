@@ -4,7 +4,7 @@ import Sketch
 
 class SignViewController: UIViewController {
     //コンプリートしたpromiseデータを代入するは辞書の配列
-    var promiseUser : [[String:Any]] = [[:]]
+    var promiseUser : [[String:Any]] = []
     var data:[String:Any] = [:]
     //スクリーン宣言
     @IBOutlet weak var sketchView: SketchView!
@@ -88,13 +88,16 @@ class SignViewController: UIViewController {
         let documentsURL = FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask)[0]
         let fileURL = documentsURL.appendingPathComponent(fileName)
         
-        print(fileURL)
+        
         do {
             try pngImageData!.write(to: fileURL)
+            let url:String = fileURL.absoluteString
+            data.updateValue(url, forKey: "signPath")
         } catch {
             //エラー処理
             return false
         }
+      
         return true
     }
     
@@ -158,25 +161,20 @@ func makeP() {
          testVC.imageView  .image = image
          */
         
-        let setImage = saveImage(image:image,fileName: "sign")
-        print (setImage)
+    let setImage = saveImage(image:image,fileName:data["prName"] as! String )
+    print(setImage) //サインの保存が成功したらtrueを返す
         
         // トップページの配列辞書に空のsignを作ってそれを更新する場合は、promiseUser[0]["sign"] = setImage,
         
         
         // 配列の中にある辞書に新たなキーとその値を追加
         //とりあえず画像は別々に保存することにした
-        //  data.updateValue(setImage, forKey: "sign")
+        //data.updateValue(setImage, forKey: "sign")
+  
         
         
-        
-        if promiseUser[0].isEmpty == false
-        {
-            promiseUser.append(data)
-            
-        } else {
-            promiseUser[0] = data
-        }
+         promiseUser.append(data)
+    
         UserDefaults.standard.set( promiseUser, forKey: "promiseMade")
     }
     
