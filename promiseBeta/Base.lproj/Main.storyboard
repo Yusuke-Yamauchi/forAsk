@@ -760,9 +760,8 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q8w-Ks-grd">
-                                <rect key="frame" x="107" y="758" width="201" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q8w-Ks-grd">
+                                <rect key="frame" x="106.5" y="759" width="201" height="53"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                 <state key="normal" title="Send Promise"/>
                                 <connections>
@@ -772,6 +771,10 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Q8w-Ks-grd" firstAttribute="centerX" secondItem="t9H-Uq-TzU" secondAttribute="centerX" id="065-5T-Qd2"/>
+                            <constraint firstItem="te5-gT-GfA" firstAttribute="bottom" secondItem="Q8w-Ks-grd" secondAttribute="bottom" constant="50" id="5eW-vH-Kww"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="te5-gT-GfA"/>
                     </view>
                     <connections>
@@ -782,7 +785,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Z1-Be-gZe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2047.826086956522" y="85.714285714285708"/>
+            <point key="canvasLocation" x="1942" y="86"/>
         </scene>
     </scenes>
     <resources>

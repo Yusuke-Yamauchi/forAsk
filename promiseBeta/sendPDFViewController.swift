@@ -19,6 +19,7 @@ class sendPDFViewController: UIViewController {
         textView.isSelectable = false
         
         
+    
      
     }
     var promiseMade:[[String:Any]] = []
@@ -47,6 +48,19 @@ class sendPDFViewController: UIViewController {
         
                 let image = UIImage(contentsOfFile:pathURL!.path)
                     signImageView.image = image
+        
+        //内容表示
+        let pName:String = promiseSelected["prName"] as! String
+        let details:String = promiseSelected["dtl"] as! String
+        let pDate:String = promiseSelected["prDate"] as! String
+        let dDate:String = promiseSelected["dDate"] as! String
+        let urName:String = promiseSelected["urName"] as! String
+        let ptnInfo = promiseSelected["prtInfoDic"] as! [String:Any]
+        let ptnName:String = ptnInfo["name"] as! String
+        let ptnAdress:String = ptnInfo["email"] as! String
+        
+        
+        textView.text = "Promise Name:\n\(pName)\n\nDetails:\n\(details)\n\nPromise Date:\n\(pDate)\n\nDue Date:\n\(dDate)\n\nYour  Name:\n\(urName)\n\nPartner Name\n\(ptnName)\n\nPartner Email:\n\(ptnAdress))"
     }
     
     
