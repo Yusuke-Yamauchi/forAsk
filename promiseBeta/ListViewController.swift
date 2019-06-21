@@ -5,6 +5,12 @@ import UIKit
 
 class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
+    
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+       return 1
+    }
+    
     //行の数を指定
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -32,9 +38,35 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     // セルをデリートする機能を付け加える
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete {
+            //消す前にまずpathを取得
+            let pathURL = URL(string:promiseUserC[indexPath.row]["signPath"] as! String)
+            let pdfPathURL = URL(string:promiseUserC[indexPath.row]["pdfPath"] as! String)
             promiseUserC.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
             UserDefaults.standard.set( promiseUserC, forKey: "promiseMade")
+            //サイン画像ファイルとPDFも同時に削除する
+           
+            //サイン画像を削除
+            do {
+                
+                try FileManager.default.removeItem( atPath: pathURL!.path )
+                
+            } catch {
+                
+                //エラー処理
+                print("error")
+                
+            }
+            do {
+                
+                try FileManager.default.removeItem( atPath: pdfPathURL!.path )
+                
+            } catch {
+                
+                //エラー処理
+                print("pdfがありません")
+                
+            }
         }
     }
     
@@ -68,37 +100,29 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             self.tableView.reloadData()
             
-            print(promiseUserC)
+            
         }
         
     }
     
-    
-    
-    @IBAction func backToSign(_ sender: Any) {
-        
-        //画面遷移 戻る！！！！！
-        self.dismiss(animated: true, completion: nil)
-        
-    }
-    
+
     
     @IBAction func toTop(_ sender: Any) {
         //画面遷移 最初に戻る！！！！！
         //同じストーリーボード
         let storyboard: UIStoryboard = self.storyboard!
-        //ここで移動先のstoryboardを選択(StoryboradID)
-        let toList = storyboard.instantiateViewController(withIdentifier: "ViewController")
+        //ここで移動先のstoryboardを選択(StoryboradID) 遷移先のclassを実体化 "instantiateViewController"
+        let toList = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        
+        //こここかであれば
+        toList.fromListView = true
+        
         self.present(toList, animated: false, completion: nil)
-        
-        
         UserDefaults.standard.removeObject(forKey: "pData")
         
     }
     
-    
-    
-    
+
     
     //アラート関数
     func makePAlert(message: String) {
@@ -113,4 +137,31 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
-}
+    //segueで移動する際に値を渡す
+    var selectedRow = 0
+    
+    
+    
+    //セルを選んだ際に実行するfunc
+   
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            selectedRow = indexPath.row
+            UserDefaults.standard.set(selectedRow, forKey: "selectedRow")
+        
+            
+        }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//
+//
+//        print(selectedRow)
+//
+//
+//        if segue.identifier == "segueToSendPDF" {
+//            let sendPDFVC = segue.destination as! sendPDFViewController
+//            sendPDFVC.promiseSelected = promiseUserC[selectedRow]
+//        }
+    }
+        
+    
+
