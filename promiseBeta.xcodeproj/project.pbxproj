@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C068BFD22BA34E000199A5B /* Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C068BFC22BA34E000199A5B /* Email.swift */; };
 		7C2E7F0522AF7EFA00409DF1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7C2E7F0422AF7EFA00409DF1 /* GoogleService-Info.plist */; };
-		7CA0C49F22BB5804005F2C33 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA0C49E22BB5804005F2C33 /* IntroViewController.swift */; };
 		7CAB061C22AF7E1E00AD5179 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB061B22AF7E1E00AD5179 /* AppDelegate.swift */; };
 		7CAB062122AF7E1E00AD5179 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CAB061F22AF7E1E00AD5179 /* Main.storyboard */; };
 		7CAB062322AF7E1E00AD5179 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CAB062222AF7E1E00AD5179 /* Assets.xcassets */; };
@@ -23,8 +23,8 @@
 /* Begin PBXFileReference section */
 		2C9D785A773076528F7B4542 /* Pods-promiseBeta.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-promiseBeta.debug.xcconfig"; path = "Target Support Files/Pods-promiseBeta/Pods-promiseBeta.debug.xcconfig"; sourceTree = "<group>"; };
 		5F1FEC23419A020410DC0AD6 /* Pods-promiseBeta.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-promiseBeta.release.xcconfig"; path = "Target Support Files/Pods-promiseBeta/Pods-promiseBeta.release.xcconfig"; sourceTree = "<group>"; };
+		7C068BFC22BA34E000199A5B /* Email.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Email.swift; sourceTree = "<group>"; };
 		7C2E7F0422AF7EFA00409DF1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
-		7CA0C49E22BB5804005F2C33 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		7CAB061822AF7E1E00AD5179 /* promiseBeta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = promiseBeta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CAB061B22AF7E1E00AD5179 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CAB062022AF7E1E00AD5179 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -80,14 +80,14 @@
 		7CAB061A22AF7E1E00AD5179 /* promiseBeta */ = {
 			isa = PBXGroup;
 			children = (
+				7C068BFC22BA34E000199A5B /* Email.swift */,
 				7CAB061B22AF7E1E00AD5179 /* AppDelegate.swift */,
 				7CBCE80322B0DD51008C44FD /* ListViewController.swift */,
 				7CBCE80122B0DD29008C44FD /* SignViewController.swift */,
 				7CBCE7FD22B0B4EB008C44FD /* ViewController.swift */,
-				7CA0C49E22BB5804005F2C33 /* IntroViewController.swift */,
 				7CAB061F22AF7E1E00AD5179 /* Main.storyboard */,
-				7CAB062422AF7E1E00AD5179 /* LaunchScreen.storyboard */,
 				7CAB062222AF7E1E00AD5179 /* Assets.xcassets */,
+				7CAB062422AF7E1E00AD5179 /* LaunchScreen.storyboard */,
 				CECA807C22B1F8CF0032C788 /* extentionUIView.swift */,
 				7CAB062722AF7E1E00AD5179 /* Info.plist */,
 				7C2E7F0422AF7EFA00409DF1 /* GoogleService-Info.plist */,
@@ -221,7 +221,7 @@
 			files = (
 				7CBCE7FE22B0B4EB008C44FD /* ViewController.swift in Sources */,
 				CECA807D22B1F8CF0032C788 /* extentionUIView.swift in Sources */,
-				7CA0C49F22BB5804005F2C33 /* IntroViewController.swift in Sources */,
+				7C068BFD22BA34E000199A5B /* Email.swift in Sources */,
 				7CBCE80222B0DD29008C44FD /* SignViewController.swift in Sources */,
 				7CBCE80422B0DD51008C44FD /* ListViewController.swift in Sources */,
 				7CAB061C22AF7E1E00AD5179 /* AppDelegate.swift in Sources */,
