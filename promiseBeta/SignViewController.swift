@@ -22,10 +22,11 @@ class SignViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         clearButton.isHidden = false
         
-//トップページで入力したデータを呼び出してdataという辞書の配列に入れる
+        
+        //トップページで入力したデータを呼び出してdataという辞書の配列に入れる
         if UserDefaults.standard.object(forKey: "pData") != nil {
             data = UserDefaults.standard.object(forKey: "pData") as! [String : Any]
-            print("data:\n\(data)")
+
         }
         if UserDefaults.standard.object(forKey: "promiseMade") != nil {
             promiseUser = UserDefaults.standard.object(forKey: "promiseMade") as! [[String : Any]]
@@ -80,13 +81,16 @@ class SignViewController: UIViewController {
         let documentsURL = FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask)[0]
         let fileURL = documentsURL.appendingPathComponent(fileName)
         
-        print(fileURL)
+        
         do {
             try pngImageData!.write(to: fileURL)
+            let url:String = fileURL.absoluteString
+            data.updateValue(url, forKey: "signPath")
         } catch {
             //エラー処理
             return false
         }
+      
         return true
     }
     
@@ -103,7 +107,7 @@ class SignViewController: UIViewController {
         // 第3引数のUIAlertActionStyleでボタンのスタイルを指定する
         // OKボタン
         let defaultAction: UIAlertAction = UIAlertAction(title: "PROMISE!", style: UIAlertAction.Style.default, handler:{
-            
+    
             (action: UIAlertAction!) -> Void in
             print("PROMISE!")
             
@@ -116,7 +120,7 @@ class SignViewController: UIViewController {
             // ボタンが押された時の処理を書く（クロージャ実装）
             (action: UIAlertAction!) -> Void in
             print("Back")
-            
+        
         })
         
         // ③ UIAlertControllerにActionを追加
@@ -125,50 +129,50 @@ class SignViewController: UIViewController {
         
         // ④ Alertを表示
         present(alert, animated: true, completion: nil)
-        
-        
-        
+    
+    
+    
     }
-    
-    
+
+   
     //ここで全部を保存する関数!!!!!!!!ここに遷移をいれなければいけない。
-    func makeP() {
+func makeP() {
         clearButton.isHidden = true
         let image = GetImage()
         sendImage = image
         
-        
-        //まずは、同じstororyboard内であることをここで定義
-        let storyboard: UIStoryboard = self.storyboard!
-        //ここで移動先のstoryboardを選択(StoryboradIDはList)
-        let toList = storyboard.instantiateViewController(withIdentifier: "List")
-        
-        //ここが実際に移動するコードList
-        self.present(toList, animated: true, completion: nil)
-        
+    //まずは、同じstororyboard内であることをここで定義
+    let storyboard: UIStoryboard = self.storyboard!
+    //ここで移動先のstoryboardを選択(StoryboradIDはList)
+    let toList = storyboard.instantiateViewController(withIdentifier: "List")
+    //ここが実際に移動するコードList
+    self.present(toList, animated: true, completion: nil)
+    
         //メモ:別のストーリーボードの呼び出し方(今回は使わない)
         /*       let testVC = self.storyboard?.instantiateViewController(withIdentifier: "testVC") as! testViewController
          
          testVC.imageView  .image = image
          */
         
-        let setImage = saveImage(image:image,fileName: "sign")
-        print (setImage)
+    let setImage = saveImage(image:image,fileName:data["prName"] as! String )
+    print(setImage) //サインの保存が成功したらtrueを返す
         
         // トップページの配列辞書に空のsignを作ってそれを更新する場合は、promiseUser[0]["sign"] = setImage,
         
         
         // 配列の中にある辞書に新たなキーとその値を追加
         //とりあえず画像は別々に保存することにした
-        //  data.updateValue(setImage, forKey: "sign")
+        //data.updateValue(setImage, forKey: "sign")
+  
         
-        
-        
-        promiseUser.append(data)
+    
+         promiseUser.append(data)
+    
         UserDefaults.standard.set( promiseUser, forKey: "promiseMade")
     }
-
     
+    
+
     
 }
 

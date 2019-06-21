@@ -4,8 +4,8 @@ import Contacts
 
 class ViewController: UIViewController, UITextFieldDelegate {
     
-//    //ロゴのimageViewを入れる変数
-//    var logoImageView: UIImageView!
+    //    //ロゴのimageViewを入れる変数
+    //    var logoImageView: UIImageView!
     
     //Listから来たかを調べる変数
     var fromListView:Bool?
@@ -18,7 +18,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         //エラーの時のUserdefaultsリセット
         UserDefaults.standard.removeObject(forKey: "pData")
         UserDefaults.standard.removeObject(forKey: "promiseMade")
-        
         
         //Promisedateチェッカーを白にしてバックを不透明にする
         //        https://wayohoo.com/programming/swift/how-to-change-text-color-for-uidatepicker.html
@@ -33,16 +32,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         changeDueDate.setValue(false, forKey: "highlightsToday")
         
+        
     }
     
-    
-    
-    //画面遷移してきた時の処理 toTop から戻ってきた時、初期化
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated:Bool){
         
         //Listから来たのであれば実行
         if fromListView ?? false {
-        
+            
+            
             promiseNameText.text! =  ""
             detailButton.setTitle("", for: .normal)
             detailLongText.text! =  ""
@@ -59,17 +57,23 @@ class ViewController: UIViewController, UITextFieldDelegate {
             partnerEmailText.text =  ""
             
             
-            //                placeholderを再設置、textViewのPlaceHolderが難しい
+            
+            //placeholderを再設置
+            
+            
+            //         detailLongText.attributedPlaceholder = NSAttributedString(string: "Add the detail of your Promise", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray])
             
             
             partnerNameText.attributedPlaceholder = NSAttributedString(string: "Add your Partner Name...", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray])
             
             partnerEmailText.attributedPlaceholder = NSAttributedString(string: "Add your Partner's Email Adress...", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray])
-        
+            
             fromListView = false
+            
         }
-        
     }
+    
+    
     
     
     //全てのボタンを無効にする関数
@@ -210,7 +214,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
         }
     }
-    
     
     //膜の中のバックボタン
     @IBAction func backToTopD(_ sender: Any) {
@@ -363,7 +366,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func nextButton(_ sender: Any) {
-        
+        //promiseName OK
         let prName: String = promiseNameText.text!
         let dtl: String = detailLongText.text!
         let prDate = promiseDateCheker
@@ -371,11 +374,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let urName: String = yourNameText.text!
         //PartnerInfoの名前とEmailを辞書で保存
         let prtInfoDic: [String: String] = ["name": partnerNameText.text!   , "email": partnerEmailText.text!]
-        
-        
-        
-        
-        
         
         
         //各項目が空であれば
@@ -394,14 +392,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         } else {
             
             showAlertE(message: "Please Fill in the E-mail Correctly")
-            
         }
         
     }
-    
-    
-    
-    
     //アラートの関数宣言 入力
     func showAlert(message: String) {
         
@@ -437,8 +430,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    
-    
-    
 }
+
 
