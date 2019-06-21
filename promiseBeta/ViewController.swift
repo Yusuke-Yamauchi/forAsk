@@ -250,7 +250,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy年MM月dd日 HH:mm"
         
-        promiseDateCheker =      formatter.string(from: (sender as AnyObject).date)
+        promiseDateCheker = formatter.string(from: (sender as AnyObject).date)
         
     }
     

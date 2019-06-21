@@ -78,7 +78,10 @@ class SignViewController: UIViewController {
         let pngImageData = image.pngData()
         // jpgで保存する場合
         //    let jpgImageData = UIImageJPEGRepresentation(image, 1.0)
+        
         let documentsURL = FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask)[0]
+        
+        
         let fileURL = documentsURL.appendingPathComponent(fileName)
         
         
