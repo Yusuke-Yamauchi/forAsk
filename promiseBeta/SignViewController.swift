@@ -29,9 +29,11 @@ class SignViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         clearButton.isHidden = false
         
-//トップページで入力したデータを呼び出してdataという辞書の配列に入れる
+        
+        //トップページで入力したデータを呼び出してdataという辞書の配列に入れる
         if UserDefaults.standard.object(forKey: "pData") != nil {
             data = UserDefaults.standard.object(forKey: "pData") as! [String : Any]
+            
         }
         if UserDefaults.standard.object(forKey: "promiseMade") != nil {
             promiseUser = UserDefaults.standard.object(forKey: "promiseMade") as! [[String : Any]]
@@ -109,7 +111,7 @@ class SignViewController: UIViewController {
         // 第3引数のUIAlertActionStyleでボタンのスタイルを指定する
         // OKボタン
         let defaultAction: UIAlertAction = UIAlertAction(title: "PROMISE!", style: UIAlertAction.Style.default, handler:{
-            
+    
             (action: UIAlertAction!) -> Void in
             print("PROMISE!")
             
@@ -122,7 +124,7 @@ class SignViewController: UIViewController {
             // ボタンが押された時の処理を書く（クロージャ実装）
             (action: UIAlertAction!) -> Void in
             print("Back")
-            
+        
         })
         
         // ③ UIAlertControllerにActionを追加
@@ -131,27 +133,25 @@ class SignViewController: UIViewController {
         
         // ④ Alertを表示
         present(alert, animated: true, completion: nil)
-        
-        
-        
+    
+    
+    
     }
-    
-    
+
+   
     //ここで全部を保存する関数!!!!!!!!ここに遷移をいれなければいけない。
-    func makeP() {
+func makeP() {
         clearButton.isHidden = true
         let image = GetImage()
         sendImage = image
         
-        
-        //まずは、同じstororyboard内であることをここで定義
-        let storyboard: UIStoryboard = self.storyboard!
-        //ここで移動先のstoryboardを選択(StoryboradIDはList)
-        let toList = storyboard.instantiateViewController(withIdentifier: "List")
-        
-        //ここが実際に移動するコードList
-        self.present(toList, animated: true, completion: nil)
-        
+    //まずは、同じstororyboard内であることをここで定義
+    let storyboard: UIStoryboard = self.storyboard!
+    //ここで移動先のstoryboardを選択(StoryboradIDはList)
+    let toList = storyboard.instantiateViewController(withIdentifier: "List")
+    //ここが実際に移動するコードList
+    self.present(toList, animated: true, completion: nil)
+    
         //メモ:別のストーリーボードの呼び出し方(今回は使わない)
         /*       let testVC = self.storyboard?.instantiateViewController(withIdentifier: "testVC") as! testViewController
          
@@ -169,6 +169,7 @@ class SignViewController: UIViewController {
         //  data.updateValue(setImage, forKey: "sign")
         
         
+        
         if promiseUser[0].isEmpty == false
         {
             promiseUser.append(data)
@@ -178,8 +179,9 @@ class SignViewController: UIViewController {
         }
         UserDefaults.standard.set( promiseUser, forKey: "promiseMade")
     }
-
     
+    
+
     
 }
 
