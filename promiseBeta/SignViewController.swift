@@ -4,7 +4,7 @@ import Sketch
 
 class SignViewController: UIViewController {
     //コンプリートしたpromiseデータを代入するは辞書の配列
-    var promiseUser : [[String:Any]] = [[:]]
+    var promiseUser : [[String:Any]] = []
     var data:[String:Any] = [:]
     //スクリーン宣言
     @IBOutlet weak var sketchView: SketchView!
@@ -17,13 +17,6 @@ class SignViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //UserDefaultにnilが入った時の処理
-        
-        //        let domain = Bundle.main.bundleIdentifier!
-        //        UserDefaults.standard.removePersistentDomain(forName: domain)
-        //        UserDefaults.standard.synchronize()
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -32,6 +25,7 @@ class SignViewController: UIViewController {
 //トップページで入力したデータを呼び出してdataという辞書の配列に入れる
         if UserDefaults.standard.object(forKey: "pData") != nil {
             data = UserDefaults.standard.object(forKey: "pData") as! [String : Any]
+            print("data:\n\(data)")
         }
         if UserDefaults.standard.object(forKey: "promiseMade") != nil {
             promiseUser = UserDefaults.standard.object(forKey: "promiseMade") as! [[String : Any]]
@@ -170,13 +164,7 @@ class SignViewController: UIViewController {
         
         
         
-        if promiseUser[0].isEmpty == false
-        {
-            promiseUser.append(data)
-            
-        } else {
-            promiseUser[0] = data
-        }
+        promiseUser.append(data)
         UserDefaults.standard.set( promiseUser, forKey: "promiseMade")
     }
 

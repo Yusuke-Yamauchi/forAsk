@@ -5,6 +5,12 @@ import UIKit
 
 class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
+    
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+       return 1
+    }
+    
     //行の数を指定
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -73,32 +79,25 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
-    
-    
-    @IBAction func backToSign(_ sender: Any) {
-        
-        //画面遷移 戻る！！！！！
-        self.dismiss(animated: true, completion: nil)
-        
-    }
-    
+
     
     @IBAction func toTop(_ sender: Any) {
         //画面遷移 最初に戻る！！！！！
         //同じストーリーボード
         let storyboard: UIStoryboard = self.storyboard!
-        //ここで移動先のstoryboardを選択(StoryboradID)
-        let toList = storyboard.instantiateViewController(withIdentifier: "ViewController")
-        self.present(toList, animated: false, completion: nil)
+        //ここで移動先のstoryboardを選択(StoryboradID) 遷移先のclassを実体化 "instantiateViewController"
+        let toList = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
         
+        //こここかであれば
+        toList.fromListView = true
+        
+        self.present(toList, animated: false, completion: nil)
         
         UserDefaults.standard.removeObject(forKey: "pData")
         
     }
     
-    
-    
-    
+
     
     //アラート関数
     func makePAlert(message: String) {
