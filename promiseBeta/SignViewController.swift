@@ -4,7 +4,7 @@ import Sketch
 
 class SignViewController: UIViewController {
     //コンプリートしたpromiseデータを代入するは辞書の配列
-    var promiseUser : [[String:Any]] = [[:]]
+    var promiseUser : [[String:Any]] = []
     var data:[String:Any] = [:]
     //スクリーン宣言
     @IBOutlet weak var sketchView: SketchView!
@@ -161,8 +161,8 @@ func makeP() {
          testVC.imageView  .image = image
          */
         
-        let setImage = saveImage(image:image,fileName: "sign")
-    
+    let setImage = saveImage(image:image,fileName:data["prName"] as! String )
+    print(setImage) //サインの保存が成功したらtrueを返す
         
         // トップページの配列辞書に空のsignを作ってそれを更新する場合は、promiseUser[0]["sign"] = setImage,
         
@@ -173,13 +173,8 @@ func makeP() {
   
         
         
-        if promiseUser[0].isEmpty == false
-        {
-            promiseUser.append(data)
-            
-        } else {
-            promiseUser[0] = data
-        }
+         promiseUser.append(data)
+    
         UserDefaults.standard.set( promiseUser, forKey: "promiseMade")
     }
     

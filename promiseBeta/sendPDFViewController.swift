@@ -12,17 +12,18 @@ class sendPDFViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-   
-        //手書きのサインを保存したPathを読み込んで､UIイメージに変換して表示
-        let pathURL = URL(string:promiseSelected["signPath"] as! String)
-        let image = UIImage(contentsOfFile:pathURL!.path)
-            signImageView.image = image
+     
+
       //テキストビューを編集不能にする
         textView.isEditable = false
         textView.isSelectable = false
         
+        
      
     }
+    var promiseMade:[[String:Any]] = []
+    var selectedRow:Int = 0
+    
     //ListViewControllerから値を受け取る
     var promiseSelected:[String:Any] = [:]
     
@@ -36,22 +37,38 @@ class sendPDFViewController: UIViewController {
     @IBOutlet weak var signImageView: UIImageView!
     
 
+    override func viewWillAppear(_ animated: Bool) {
+       //リストの何列目を押したか｡viewdidloadだと落ちる
+        promiseMade = UserDefaults.standard.object(forKey:"promiseMade") as! [[String : Any]]
+        selectedRow =  UserDefaults.standard.object(forKey:"selectedRow")as! Int
+                promiseSelected = promiseMade[selectedRow]
+        //手書きのサインを保存したPathを読み込んで､UIイメージに変換して表示
+                let pathURL = URL(string:promiseSelected["signPath"] as! String)
+        
+                let image = UIImage(contentsOfFile:pathURL!.path)
+                    signImageView.image = image
+    }
     
     
     @IBAction func sendPromiseButton(_ sender: UIButton) {
-        generatePDF()
+        generatePDF(promiseSelected["prName"] as! String)
+        
     }
     
     
     
     
     
-    func generatePDF() {
+    func generatePDF(_ fileName:String) {
         let promiseView = self.promiseView
         
         
-        let dst = URL(fileURLWithPath: NSTemporaryDirectory().appending("sample1.pdf"))
-        // outputs as Data
+        let dst = URL(fileURLWithPath: NSTemporaryDirectory().appending("\(fileName).pdf"))
+        //path保存のためurlをstringに
+        let url:String = dst.absoluteString
+        promiseMade[selectedRow].updateValue(url, forKey: "pdfPath")
+        UserDefaults.standard.set(promiseMade, forKey: "promiseMade")
+        print(promiseMade)
         do {
             let data = try PDFGenerator.generated(by:promiseView!)
             try data.write(to: dst, options: .atomic)

@@ -374,27 +374,30 @@ class ViewController: UIViewController, UITextFieldDelegate {
         //PartnerInfoの名前とEmailを辞書で保存
         let prtInfoDic: [String: String] = ["name": partnerNameText.text!   , "email": partnerEmailText.text!]
         
+        data = ["prName": prName, "dtl": dtl, "prDate": prDate, "dDate": dDate, "urName": urName, "prtInfoDic": prtInfoDic]
         
-        if isValidEmail(partnerEmailText.text!) {
-            //PartnerInfono膜を閉じる
-            partnerView.isHidden = true
-            
-        } else {
-            showAlertE(message: "Please Fill in the E-mail Correctly")
+        UserDefaults.standard.set( data, forKey: "pData")
+        
+//        if isValidEmail(partnerEmailText.text!) {
+//            //PartnerInfono膜を閉じる
+//            partnerView.isHidden = true
+//
+//        } else {
+//            showAlertE(message: "Please Fill in the E-mail Correctly")
+//        }
+        
+//        //各項目がからでなければ
+//        if prName.isEmpty == false && dtl.isEmpty == false && prDate.isEmpty == false && dDate.isEmpty == false && urName.isEmpty == false && partnerNameText.text != "" && partnerEmailText.text != ""{
+//            data = ["prName": prName, "dtl": dtl, "prDate": prDate, "dDate": dDate, "urName": urName, "prtInfoDic": prtInfoDic]
+//
+//            UserDefaults.standard.set( data, forKey: "pData")
+//
+//        } else {
+//            showAlert(message:
+//                "Please Fill in the Blanks")
+//        }
+//
         }
-        
-        //各項目がからでなければ
-        if prName.isEmpty == false && dtl.isEmpty == false && prDate.isEmpty == false && dDate.isEmpty == false && urName.isEmpty == false && partnerNameText.text != "" && partnerEmailText.text != ""{
-            data = ["prName": prName, "dtl": dtl, "prDate": prDate, "dDate": dDate, "urName": urName, "prtInfoDic": prtInfoDic]
-            
-            UserDefaults.standard.set( data, forKey: "pData")
-            
-        } else {
-            showAlert(message:
-                "Please Fill in the Blanks")
-        }
-        
-    }
     
     
     //アラートの関数宣言 入力
