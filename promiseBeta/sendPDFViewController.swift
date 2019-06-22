@@ -41,6 +41,15 @@ class sendPDFViewController: UIViewController {
     var promiseSelected:[String:Any] = [:]
     
     @IBOutlet weak var textView: UITextView!
+
+    
+    @IBAction func backToList(_ sender: Any) {
+        //画面遷移 戻る！！！！！
+        self.dismiss(animated: true, completion: nil)
+
+    }
+    
+    
     
     //PDFに保存したいものが乗っているView
     @IBOutlet weak var promiseView: UIView!
@@ -54,9 +63,11 @@ class sendPDFViewController: UIViewController {
         selectedRow =  UserDefaults.standard.object(forKey:"selectedRow")as! Int
                 promiseSelected = promiseMade[selectedRow]
         //手書きのサインを保存したPathを読み込んで､UIイメージに変換して表示
-                let pathURL = URL(string:promiseSelected["signPath"] as! String)
+        let fileName:String = promiseSelected["prName"] as! String
+        let documentsURL = FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask)[0]
+        let fileURL = documentsURL.appendingPathComponent("\(fileName).png")
         
-                let image = UIImage(contentsOfFile:pathURL!.path)
+                let image = UIImage(contentsOfFile:fileURL.path)
                     signImageView.image = image
         
         //内容表示
@@ -70,7 +81,7 @@ class sendPDFViewController: UIViewController {
         let ptnAdress:String = ptnInfo["email"] as! String
         
         
-        textView.text = "Promise Name:\n\(pName)\n\nDetails:\n\(details)\n\nPromise Date:\n\(pDate)\n\nDue Date:\n\(dDate)\n\nYour  Name:\n\(urName)\n\nPartner Name\n\(ptnName)\n\nPartner Email:\n\(ptnAdress))"
+        textView.text = "\n\nPromise Name:\n\(pName)\n\nDetails:\n\(details)\n\nPromise Date:\n\(pDate)\n\nDue Date:\n\(dDate)\n\nYour  Name:\n\(urName)\n\nPartner Name\n\(ptnName)\n\nPartner Email:\n\(ptnAdress))"
     }
     
     
@@ -95,10 +106,10 @@ class sendPDFViewController: UIViewController {
         
         let text: String =
         
-//        " \(ptnName)さんと\(pName)をPromiseしました！ \n #PROMISE!"
+//        "\(ptnName)さんと\(pName)をPromiseしました！ \n #PROMISE! "
 //
 
-        " made a PROMISE! to \(ptnName) about \(pName) \n #PROMISE!"
+        "made a PROMISE! to \(ptnName) about \(pName) \n #PROMISE! "
         
         
         
@@ -125,32 +136,23 @@ class sendPDFViewController: UIViewController {
     
     func generatePDF(_ fileName:String) {
         let promiseView = self.promiseView
+        let fileName:String = promiseSelected["prName"] as! String
+        //新規作成されたいiPhoneの保存先フォルダの場所を取得
+        let documentsURL = FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask)[0]
         
-        
-        let dst = URL(fileURLWithPath: NSTemporaryDirectory().appending("\(fileName).pdf"))
-        //path保存のためurlをstringに
-        let url:String = dst.absoluteString
-        promiseMade[selectedRow].updateValue(url, forKey: "pdfPath")
-        UserDefaults.standard.set(promiseMade, forKey: "promiseMade")
-        print(promiseMade)
+        let fileURL = documentsURL.appendingPathComponent("\(fileName).pdf")
+
         do {
             let data = try PDFGenerator.generated(by:promiseView!)
-            try data.write(to: dst, options: .atomic)
+            try data.write(to: fileURL, options: .atomic)
+            print(fileURL)
         } catch (let error) {
             print(error)
         }
         
 }
     
-//    //イメージをローカルから読み込み
-//    func loadImageFromPath(path: String) -> UIImage? {
-//        let image = UIImage(contentsOfFile: path)
-//        if image == nil {
-//            print("missing image at: \(path)")
-//        }
-//        return image
-//}
-    
+
    
     
 }
