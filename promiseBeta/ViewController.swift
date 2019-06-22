@@ -16,8 +16,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         
         //エラーの時のUserdefaultsリセット
-        UserDefaults.standard.removeObject(forKey: "pData")
-        UserDefaults.standard.removeObject(forKey: "promiseMade")
+//        UserDefaults.standard.removeObject(forKey: "pData")
+//        UserDefaults.standard.removeObject(forKey: "promiseMade")
         
         //Promisedateチェッカーを白にしてバックを不透明にする
         //        https://wayohoo.com/programming/swift/how-to-change-text-color-for-uidatepicker.html

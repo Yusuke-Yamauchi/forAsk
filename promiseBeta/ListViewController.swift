@@ -39,8 +39,12 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete {
             //消す前にまずpathを取得
-            let pathURL = URL(string:promiseUserC[indexPath.row]["signPath"] as! String)
-            let pdfPathURL = URL(string:promiseUserC[indexPath.row]["pdfPath"] as! String)
+            let fileName:String = promiseUserC[indexPath.row]["prName"] as! String
+            //新規作成されたiPhoneの保存先フォルダの場所を取得
+            let documentsURL = FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask)[0]
+            let fileURL = documentsURL.appendingPathComponent("\(fileName).png")
+            
+            let pdfURL = documentsURL.appendingPathComponent("\(fileName).pdf")
             promiseUserC.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
             UserDefaults.standard.set( promiseUserC, forKey: "promiseMade")
@@ -49,7 +53,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             //サイン画像を削除
             do {
                 
-                try FileManager.default.removeItem( atPath: pathURL!.path )
+                try FileManager.default.removeItem( atPath: fileURL.path )
                 
             } catch {
                 
@@ -59,7 +63,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
             do {
                 
-                try FileManager.default.removeItem( atPath: pdfPathURL!.path )
+                try FileManager.default.removeItem( atPath: pdfURL.path )
                 
             } catch {
                 

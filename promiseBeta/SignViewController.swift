@@ -82,13 +82,13 @@ class SignViewController: UIViewController {
         let documentsURL = FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask)[0]
         
         
-        let fileURL = documentsURL.appendingPathComponent(fileName)
+        let fileURL = documentsURL.appendingPathComponent("\(fileName).png")
         
         
         do {
             try pngImageData!.write(to: fileURL)
-            let url:String = fileURL.absoluteString
-            data.updateValue(url, forKey: "signPath")
+//            let url:String = fileURL.absoluteString
+//            data.updateValue(url, forKey: "signPath")
         } catch {
             //エラー処理
             return false
