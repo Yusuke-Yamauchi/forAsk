@@ -70,6 +70,8 @@ class SignViewController: UIViewController {
     }
     
     
+    //サイン部分が白になるようにせviewの宣言
+    @IBOutlet weak var whitePaperView: UIView!
     
     
     //イメージをローカルに保存
