@@ -745,7 +745,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sbd-YV-Btu">
-                                <rect key="frame" x="0.0" y="90" width="414" height="484"/>
+                                <rect key="frame" x="0.0" y="90" width="414" height="492"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Y7k-Dg-Zgg">
                                         <rect key="frame" x="8" y="2" width="398" height="360"/>
@@ -770,7 +770,7 @@
                                     <constraint firstItem="Y7k-Dg-Zgg" firstAttribute="top" secondItem="Sbd-YV-Btu" secondAttribute="top" constant="2" id="T50-r6-FUx"/>
                                     <constraint firstAttribute="trailing" secondItem="Y7k-Dg-Zgg" secondAttribute="trailing" constant="8" id="WAd-JD-tp1"/>
                                     <constraint firstItem="Y7k-Dg-Zgg" firstAttribute="leading" secondItem="Sbd-YV-Btu" secondAttribute="leading" constant="8" id="e9M-v6-fXS"/>
-                                    <constraint firstAttribute="bottom" secondItem="hqs-rm-sZR" secondAttribute="bottom" constant="2" id="urx-dd-c6J"/>
+                                    <constraint firstAttribute="bottom" secondItem="hqs-rm-sZR" secondAttribute="bottom" constant="10" id="urx-dd-c6J"/>
                                     <constraint firstItem="hqs-rm-sZR" firstAttribute="top" secondItem="Y7k-Dg-Zgg" secondAttribute="bottom" id="vCH-8l-BT2"/>
                                 </constraints>
                             </view>
