@@ -789,7 +789,6 @@
                                 <state key="normal" title="Send Promise"/>
                                 <connections>
                                     <action selector="sendPromiseButton:" destination="DF7-4J-iLB" eventType="touchUpInside" id="mSK-ZS-kc3"/>
-                                    <segue destination="m6P-xp-lae" kind="show" id="8jg-hg-0DF"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="teg-kA-bkS">
@@ -833,7 +832,4 @@
     <resources>
         <image name="BCC3" width="5000" height="5000"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="8jg-hg-0DF"/>
-    </inferredMetricsTieBreakers>
 </document>
