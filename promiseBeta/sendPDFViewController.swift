@@ -179,11 +179,11 @@ class sendPDFViewController: UIViewController,MFMailComposeViewControllerDelegat
             //Bcc
             //mail.setBccRecipients(["amy@gmail.com"])
             //件名
-            mail.setSubject("件名")
+            mail.setSubject("\(urName)さんからPROMISE!が届きました。")
             //添付ファイル
             mail.addAttachmentData(fileData! as Data , mimeType: "application/pdf", fileName: pName)
             //メッセージ本文
-            mail.setMessageBody("このメールはMFMailComposeViewControllerから送られました。", isHTML: false)
+            mail.setMessageBody("\(urName)さんからPROMISE!'\(pName)' が届いています。", isHTML: false)
             //メールを表示
             self.present(mail, animated: true, completion: nil)
             //メール送信が不可能なら
@@ -200,7 +200,7 @@ class sendPDFViewController: UIViewController,MFMailComposeViewControllerDelegat
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         if error != nil {
             //送信失敗
-            print(error)
+            print("error")
         } else {
             switch result {
             case .cancelled:
