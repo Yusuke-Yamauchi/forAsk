@@ -108,11 +108,11 @@ class sendPDFViewController: UIViewController,MFMailComposeViewControllerDelegat
         
         let text: String =
         
-//        "\(ptnName)さんと\(pName)をPromiseしました！ \n #PROMISE! "
-//
+        "\(ptnName)さんと\(pName)をPromiseしました！ \n #PROMISE! #仕事発注 #約束事 "
 
-        "made a PROMISE! to \(ptnName) about \(pName) \n #PROMISE! "
-        
+
+        //        "made a PROMISE! to \(ptnName) about \(pName) \n #PROMISE! "
+//
         
         
         let encodedText = text.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
