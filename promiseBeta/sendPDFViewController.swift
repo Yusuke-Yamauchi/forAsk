@@ -12,14 +12,14 @@ class sendPDFViewController: UIViewController {
 
     
     //下のTwitterで使うために空の宣言
-    let pName:String = ""
-    let details:String = ""
-    let pDate:String = ""
-    let dDate:String = ""
-    let urName:String = ""
-    let ptnInfo = ""
-    let ptnName:String = ""
-    let ptnAdress:String = ""
+    var pName:String = ""
+    var details:String = ""
+    var pDate:String = ""
+    var dDate:String = ""
+    var urName:String = ""
+    var ptnInfo = ""
+    var ptnName:String = ""
+    var ptnAdress:String = ""
     
     
     override func viewDidLoad() {
@@ -106,11 +106,11 @@ class sendPDFViewController: UIViewController {
         
         let text: String =
         
-//        "\(ptnName)さんと\(pName)をPromiseしました！ \n #PROMISE! "
-//
+        "\(ptnName)さんと\(pName)をPromiseしました！ \n #PROMISE! #仕事発注 #約束事 "
 
-        "made a PROMISE! to \(ptnName) about \(pName) \n #PROMISE! "
-        
+
+        //        "made a PROMISE! to \(ptnName) about \(pName) \n #PROMISE! "
+//
         
         
         let encodedText = text.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
