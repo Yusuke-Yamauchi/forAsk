@@ -4,8 +4,6 @@ import Contacts
 
 class ViewController: UIViewController, UITextFieldDelegate {
     
-    //    //ロゴのimageViewを入れる変数
-    //    var logoImageView: UIImageView!
     
     //Listから来たかを調べる変数
     var fromListView:Bool?
