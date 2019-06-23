@@ -15,21 +15,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         
         
-        //今の時間を取得してボタンに表示がうまくいかない
-        //
-        
-        //let now = NSDate()
-        //
-        //
-        //        promiseDateButton.setTitle("\(now)", for: .normal) // ボタンのタイトル
-        //        promiseDateButton.setTitleColor(UIColor.black, for: .normal) // タイトルの色
-        //
-        //        dueDateButton.setTitle("\(now)", for: .normal) // ボタンのタイトル
-        //        dueDateButton.setTitleColor(UIColor.black, for: .normal) // タイトルの色
-        //
-        
-        
-        
         
         //エラーの時のUserdefaultsリセット
         //        UserDefaults.standard.removeObject(forKey: "pData")
