@@ -1,9 +1,19 @@
 import UIKit
 import Contacts
-
+import AVFoundation
 
 class ViewController: UIViewController, UITextFieldDelegate {
     
+    
+    var buttonAudioPlayer: AVAudioPlayer = AVAudioPlayer()
+   // ボタン音の関数
+    func buttonSound() {
+        if let sound = Bundle.main.path(forResource: "move", ofType: ".mp3") {
+            buttonAudioPlayer = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound))
+            // 結果表示のときに音を再生(Play)すると定義
+            buttonAudioPlayer.prepareToPlay()
+        }
+    }
     
     //Listから来たかを調べる変数
     var fromListView:Bool?
@@ -13,12 +23,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        buttonSound()
         
         
         //エラーの時のUserdefaultsリセット
         //        UserDefaults.standard.removeObject(forKey: "pData")
         //        UserDefaults.standard.removeObject(forKey: "promiseMade")
+        
+        
+        
         
         //Promisedateチェッカーを白にしてバックを不透明にする
         //        https://wayohoo.com/programming/swift/how-to-change-text-color-for-uidatepicker.html
@@ -204,6 +217,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
         } else {
             
+            //音を出す
+            buttonAudioPlayer.play()
+            
             //膜を閉じる
             detailView.isHidden = true
             allEnable()
@@ -218,6 +234,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     //膜の中のバックボタン
     @IBAction func backToTopD(_ sender: Any) {
+        
+        //音を鳴らす
+        buttonAudioPlayer.play()
         //膜を閉じる
         detailView.isHidden = true
         allEnable()
@@ -271,6 +290,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     //promiseDateチェッカーを閉じて、ボタンに表示
     @IBAction func closePromiseDate(_ sender: UIButton) {
+        
+        //音を鳴らす
+        buttonAudioPlayer.play()
+        
         promiseDateButton.setTitle(promiseDateCheker, for: .normal) // ボタンのタイトル
         promiseDateButton.setTitleColor(UIColor.black, for: .normal) // タイトルの色
         
@@ -316,6 +339,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     //dueDateチェッカーを閉じて、ボタンに表示
     @IBAction func closeDueDate(_ sender: Any) {
+        
+        //音を鳴らす
+        buttonAudioPlayer.play()
+        
         dueDateButton.setTitle(dueDateCheker, for: .normal) // ボタンのタイトル
         dueDateButton.setTitleColor(UIColor.black, for: .normal) // タイトルの色
         
@@ -350,6 +377,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     //Addして膜を閉じるボタン
     @IBAction func addPartnerButton(_ sender: Any) {
         
+        
+        //音を鳴らす
+        buttonAudioPlayer.play()
         //空白の場合のアラート
         if
             partnerNameText.text! == "" && partnerEmailText.text! == "" {
@@ -375,6 +405,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     //膜の中のバックボタン
     @IBAction func backToTopP(_ sender: Any) {
         
+        //音を鳴らす
+        buttonAudioPlayer.play()
+        
         partnerView.isHidden = true
         allEnable()
         
@@ -388,6 +421,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func nextButton(_ sender: Any) {
         //promiseName OK
+    
         let prName: String = promiseNameText.text!
         let dtl: String = detailLongText.text!
         let prDate = promiseDateCheker
@@ -407,6 +441,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         if isValidEmail(partnerEmailText.text!) {
             
+            //音を鳴らす
+            buttonAudioPlayer.play()
+            
             data = ["prName": prName, "dtl": dtl, "prDate": prDate, "dDate": dDate, "urName": urName, "prtInfoDic": prtInfoDic]
             UserDefaults.standard.set( data, forKey: "pData")
             
@@ -416,6 +453,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
         
     }
+    
+    
     //アラートの関数宣言 入力
     func showAlert(message: String) {
         
