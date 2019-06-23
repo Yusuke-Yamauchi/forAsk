@@ -266,8 +266,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         closePromiseDate.isHidden = false
         
         let formatter = DateFormatter()
-        //日本語の空のフォーマットにしている
-        formatter.dateFormat = "yyyy/MM/dd/ HH:mm"
+        //現在時刻をあらかじめ読み込んでいる。これによりまピッカーを回さないとボタンに表示されない問題を解決 NSDate() は現在時刻の関数
+        formatter.dateFormat = "yyyy/MM/dd"
         promiseDateCheker = formatter.string(from: (NSDate() as Date))
         
         
@@ -279,7 +279,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         let formatter = DateFormatter()
         //日本語の空のフォーマットにしている
-        formatter.dateFormat = "yyyy/MM/dd/ HH:mm"
+        formatter.dateFormat = "yyyy/MM/dd"
         promiseDateCheker = formatter.string(from: (sender as AnyObject).date)
         
     }
@@ -310,8 +310,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         
         let formatter = DateFormatter()
-        //日本語の空のフォーマットにしている
-        formatter.dateFormat = "yyyy/MM/dd/ HH:mm"
+        //現在時刻をあらかじめ読み込んでいる。これによりまピッカーを回さないとボタンに表示されない問題を解決 NSDate() は現在時刻の関数
+        formatter.dateFormat = "yyyy/MM/dd"
         dueDateCheker = formatter.string(from: (NSDate() as Date))
         
     }
@@ -321,7 +321,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func changeDueDate(_ sender: Any) {
         
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy/MM/dd/ HH:mm"
+        formatter.dateFormat = "yyyy/MM/dd"
         
         dueDateCheker = formatter.string(from: (sender as AnyObject).date)
         
