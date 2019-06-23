@@ -8,14 +8,32 @@ class ViewController: UIViewController, UITextFieldDelegate {
     //Listから来たかを調べる変数
     var fromListView:Bool?
     
+    
     //立ち上がりの処理
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
+        
+        //今の時間を取得してボタンに表示がうまくいかない
+        //
+        
+        //let now = NSDate()
+        //
+        //
+        //        promiseDateButton.setTitle("\(now)", for: .normal) // ボタンのタイトル
+        //        promiseDateButton.setTitleColor(UIColor.black, for: .normal) // タイトルの色
+        //
+        //        dueDateButton.setTitle("\(now)", for: .normal) // ボタンのタイトル
+        //        dueDateButton.setTitleColor(UIColor.black, for: .normal) // タイトルの色
+        //
+        
+        
+        
+        
         //エラーの時のUserdefaultsリセット
-//        UserDefaults.standard.removeObject(forKey: "pData")
-//        UserDefaults.standard.removeObject(forKey: "promiseMade")
+        //        UserDefaults.standard.removeObject(forKey: "pData")
+        //        UserDefaults.standard.removeObject(forKey: "promiseMade")
         
         //Promisedateチェッカーを白にしてバックを不透明にする
         //        https://wayohoo.com/programming/swift/how-to-change-text-color-for-uidatepicker.html
@@ -227,8 +245,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     
     //___________PromiseDate部分！！！！！！！！
-    // 日時を取得してButtonに表示させるための変数
+    // 日時を取得してButtonに表示させるための変数 初期値を入れる
     var promiseDateCheker: String = ""
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     // promiseDateのチェッカーを表示
@@ -239,6 +265,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
         changePromiseDate.isHidden = false
         closePromiseDate.isHidden = false
         
+        let formatter = DateFormatter()
+        //日本語の空のフォーマットにしている
+        formatter.dateFormat = "yyyy/MM/dd/ HH:mm"
+        promiseDateCheker = formatter.string(from: (NSDate() as Date))
+        
+        
     }
     
     
@@ -246,8 +278,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func changePromiseDate(_ sender: Any) {
         
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy年MM月dd日 HH:mm"
-        
+        //日本語の空のフォーマットにしている
+        formatter.dateFormat = "yyyy/MM/dd/ HH:mm"
         promiseDateCheker = formatter.string(from: (sender as AnyObject).date)
         
     }
@@ -276,6 +308,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
         changeDueDate.isHidden = false
         closeDueDate.isHidden = false
         
+        
+        let formatter = DateFormatter()
+        //日本語の空のフォーマットにしている
+        formatter.dateFormat = "yyyy/MM/dd/ HH:mm"
+        dueDateCheker = formatter.string(from: (NSDate() as Date))
+        
     }
     
     
@@ -283,9 +321,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func changeDueDate(_ sender: Any) {
         
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy年MM月dd日 HH:mm"
+        formatter.dateFormat = "yyyy/MM/dd/ HH:mm"
         
-        dueDateCheker =      formatter.string(from: (sender as AnyObject).date)
+        dueDateCheker = formatter.string(from: (sender as AnyObject).date)
         
     }
     

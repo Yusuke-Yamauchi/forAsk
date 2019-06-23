@@ -162,12 +162,7 @@ func makeP() {
     let setImage = saveImage(image:image,fileName:data["prName"] as! String )
     print(setImage) //サインの保存が成功したらtrueを返す
         
-        // トップページの配列辞書に空のsignを作ってそれを更新する場合は、promiseUser[0]["sign"] = setImage,
-        
-        
-        // 配列の中にある辞書に新たなキーとその値を追加
-        //とりあえず画像は別々に保存することにした
-        //data.updateValue(setImage, forKey: "sign")
+        // トップページの配列辞書に空のsignを作ってそれを更新する場合は、promiseUser[0]["sign"] = setImage
   
         
     
