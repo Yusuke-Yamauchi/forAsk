@@ -1,8 +1,22 @@
 import UIKit
 import Sketch
-
+import AVFoundation
 
 class SignViewController: UIViewController {
+    
+    // ボタンの音変数
+    var buttonAudioPlayer: AVAudioPlayer = AVAudioPlayer()
+    // ボタン音の関数
+    func buttonSound() {
+        if let sound = Bundle.main.path(forResource: "move", ofType: ".mp3") {
+            buttonAudioPlayer = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound))
+            buttonAudioPlayer.prepareToPlay()
+        }
+    }
+    
+    
+    
+    
     //コンプリートしたpromiseデータを代入するは辞書の配列
     var promiseUser : [[String:Any]] = []
     var data:[String:Any] = [:]
@@ -17,6 +31,10 @@ class SignViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        buttonSound()
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -26,7 +44,7 @@ class SignViewController: UIViewController {
         //トップページで入力したデータを呼び出してdataという辞書の配列に入れる
         if UserDefaults.standard.object(forKey: "pData") != nil {
             data = UserDefaults.standard.object(forKey: "pData") as! [String : Any]
-
+            
         }
         if UserDefaults.standard.object(forKey: "promiseMade") != nil {
             promiseUser = UserDefaults.standard.object(forKey: "promiseMade") as! [[String : Any]]
@@ -35,7 +53,10 @@ class SignViewController: UIViewController {
     
     //バックボタン関数
     @IBAction func backToTop(_ sender: Any) {
+        //音を鳴らす
+        self.buttonAudioPlayer.play()
         //画面遷移 戻る！！！！！
+        
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -89,13 +110,13 @@ class SignViewController: UIViewController {
         
         do {
             try pngImageData!.write(to: fileURL)
-//            let url:String = fileURL.absoluteString
-//            data.updateValue(url, forKey: "signPath")
+            //            let url:String = fileURL.absoluteString
+            //            data.updateValue(url, forKey: "signPath")
         } catch {
             //エラー処理
             return false
         }
-      
+        
         return true
     }
     
@@ -112,9 +133,12 @@ class SignViewController: UIViewController {
         // 第3引数のUIAlertActionStyleでボタンのスタイルを指定する
         // OKボタン
         let defaultAction: UIAlertAction = UIAlertAction(title: "PROMISE!", style: UIAlertAction.Style.default, handler:{
-    
+            
             (action: UIAlertAction!) -> Void in
             print("PROMISE!")
+            
+            //音を鳴らす
+            self.buttonAudioPlayer.play()
             
             //promiseを保存する
             self.makeP()
@@ -125,7 +149,7 @@ class SignViewController: UIViewController {
             // ボタンが押された時の処理を書く（クロージャ実装）
             (action: UIAlertAction!) -> Void in
             print("Back")
-        
+            
         })
         
         // ③ UIAlertControllerにActionを追加
@@ -134,45 +158,45 @@ class SignViewController: UIViewController {
         
         // ④ Alertを表示
         present(alert, animated: true, completion: nil)
-    
-    
-    
+        
+        
+        
     }
-
-   
+    
+    
     //ここで全部を保存する関数!!!!!!!!ここに遷移をいれなければいけない。
-func makeP() {
+    func makeP() {
         clearButton.isHidden = true
         let image = GetImage()
         sendImage = image
         
-    //まずは、同じstororyboard内であることをここで定義
-    let storyboard: UIStoryboard = self.storyboard!
-    //ここで移動先のstoryboardを選択(StoryboradIDはList)
-    let toList = storyboard.instantiateViewController(withIdentifier: "List")
-    //ここが実際に移動するコードList
-    self.present(toList, animated: true, completion: nil)
-    
+        //まずは、同じstororyboard内であることをここで定義
+        let storyboard: UIStoryboard = self.storyboard!
+        //ここで移動先のstoryboardを選択(StoryboradIDはList)
+        let toList = storyboard.instantiateViewController(withIdentifier: "List")
+        //ここが実際に移動するコードList
+        self.present(toList, animated: true, completion: nil)
+        
         //メモ:別のストーリーボードの呼び出し方(今回は使わない)
         /*       let testVC = self.storyboard?.instantiateViewController(withIdentifier: "testVC") as! testViewController
          
          testVC.imageView  .image = image
          */
         
-    let setImage = saveImage(image:image,fileName:data["prName"] as! String )
-    print(setImage) //サインの保存が成功したらtrueを返す
+        let setImage = saveImage(image:image,fileName:data["prName"] as! String )
+        print(setImage) //サインの保存が成功したらtrueを返す
         
         // トップページの配列辞書に空のsignを作ってそれを更新する場合は、promiseUser[0]["sign"] = setImage
-  
         
-    
-         promiseUser.append(data)
-    
+        
+        
+        promiseUser.append(data)
+        
         UserDefaults.standard.set( promiseUser, forKey: "promiseMade")
     }
     
     
-
+    
     
 }
 

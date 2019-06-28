@@ -9,8 +9,15 @@
 import UIKit
 import PDFGenerator
 import MessageUI
+import AVFoundation
+
 class sendPDFViewController: UIViewController,MFMailComposeViewControllerDelegate {
 
+    
+    
+    // ボタンの音変数
+    var buttonAudioPlayer: AVAudioPlayer = AVAudioPlayer()
+    
     
     //下のTwitterで使うために空の宣言
     var pName:String = ""

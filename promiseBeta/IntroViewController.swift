@@ -50,7 +50,7 @@ class IntroViewController: UIViewController {
                        
                        animations: { () in
                         
-                        self.titleLogo.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+                        self.titleLogo.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
                         
         }, completion: { (Bool) in })
         

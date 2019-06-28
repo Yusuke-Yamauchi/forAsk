@@ -1,9 +1,21 @@
 import UIKit
-
+import AVFoundation
 
 //UITableView のメソッドを読むために UITableViewDelegate(tableViewのメソッドをインポート UITableViewDataSource付け加える
 
 class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+    
+    
+    // ボタンの音変数
+    var buttonAudioPlayer: AVAudioPlayer = AVAudioPlayer()
+    func buttonSound() {
+        if let sound = Bundle.main.path(forResource: "move", ofType: ".mp3") {
+            buttonAudioPlayer = try! AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound))
+            // 結果表示のときに音を再生(Play)すると定義
+            buttonAudioPlayer.prepareToPlay()
+        }
+    }
+    
     
     
     
@@ -86,6 +98,8 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //音を出す関数を読み込んでおく
+        buttonSound()
         //これを読み込まないとTableViewの機能が実行されない
         tableView.dataSource = self
         tableView.delegate = self
@@ -112,6 +126,11 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     
     @IBAction func toTop(_ sender: Any) {
+        
+        self.buttonAudioPlayer.play()
+        
+        
+        
         //画面遷移 最初に戻る！！！！！
         //同じストーリーボード
         let storyboard: UIStoryboard = self.storyboard!
