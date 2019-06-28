@@ -68,7 +68,8 @@
                                 </constraints>
                                 <state key="normal" title="to List"/>
                                 <connections>
-                                    <segue destination="m6P-xp-lae" kind="show" id="Hg5-e7-HyV"/>
+                                    <action selector="toList:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lpC-od-z1U"/>
+                                    <segue destination="m6P-xp-lae" kind="show" id="ffA-wb-EI3"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Promise!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q0a-CF-r4J">

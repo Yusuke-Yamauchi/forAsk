@@ -193,6 +193,20 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     
     
+   //Listに行くボタン 宣言
+    @IBAction func toList(_ sender: Any) {
+        
+        //音を出す
+        buttonAudioPlayer.play()
+        
+//        let storyboard: UIStoryboard = self.storyboard!
+//        //ここで移動先のstoryboardを選択(StoryboradIDはList)
+//        let toList = storyboard.instantiateViewController(withIdentifier: "List")
+//        //ここが実際に移動するコードList
+//        self.present(toList, animated: true, completion: nil)
+        
+        
+    }
     
     
     
@@ -417,6 +431,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     //詳細を保存する配列を代入する変数
     var data: [String:Any] = [:]
+   
+    
+    
+    
+    
     
     
     @IBAction func nextButton(_ sender: Any) {
@@ -489,7 +508,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         return result
     }
     
-    
+
 }
 
 
