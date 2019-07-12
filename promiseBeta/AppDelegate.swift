@@ -8,19 +8,43 @@
 
 import UIKit
 import Firebase
-
+import FirebaseUI
+//import TwitterKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
         return true
     }
-
+    func application(_ app: UIApplication, open url: URL,
+                     options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
+        let sourceApplication = options[UIApplication.OpenURLOptionsKey.sourceApplication] as! String?
+        // GoogleもしくはFacebook認証の場合、trueを返す
+        if FUIAuth.defaultAuthUI()?.handleOpen(url, sourceApplication: sourceApplication) ?? false {
+            return true
+        }// 電話番号認証の場合、trueを返す
+//        if Auth.auth().canHandle(url) {
+//            return true
+//        }
+        return false
+    }
+    
+    // 電話番号認証の場合に通知をHandel出来るかチェックする関数
+//    func application(_ application: UIApplication,
+//                     didReceiveRemoteNotification notification: [AnyHashable : Any],
+//                     fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+//        if Auth.auth().canHandleNotification(notification) {
+//            completionHandler(.noData)
+//            return
+//        }
+//        // エラーの時の処理を書く
+    //}
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

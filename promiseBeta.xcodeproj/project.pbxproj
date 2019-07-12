@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7C068BFD22BA34E000199A5B /* Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C068BFC22BA34E000199A5B /* Email.swift */; };
-		7C2E7F0522AF7EFA00409DF1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7C2E7F0422AF7EFA00409DF1 /* GoogleService-Info.plist */; };
 		7C60ABC722BCA571009BFF85 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C60ABC622BCA571009BFF85 /* IntroViewController.swift */; };
 		7C9A23D622BF1D0D00C5C234 /* move.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7C9A23D522BF1D0D00C5C234 /* move.mp3 */; };
 		7CAB061C22AF7E1E00AD5179 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAB061B22AF7E1E00AD5179 /* AppDelegate.swift */; };
@@ -20,6 +19,8 @@
 		7CBCE80422B0DD51008C44FD /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBCE80322B0DD51008C44FD /* ListViewController.swift */; };
 		A63898B580CC74865519364E /* Pods_promiseBeta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E58D08C18C5344CF9359C99D /* Pods_promiseBeta.framework */; };
 		CE75B33222BB3AB0003FCF90 /* sendPDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE75B33122BB3AB0003FCF90 /* sendPDFViewController.swift */; };
+		CEAC7A5922D89CD80010EEC5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEAC7A5822D89CD80010EEC5 /* GoogleService-Info.plist */; };
+		CEAC7A5B22D8A4330010EEC5 /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC7A5A22D8A4330010EEC5 /* loginViewController.swift */; };
 		CECA807D22B1F8CF0032C788 /* extentionUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA807C22B1F8CF0032C788 /* extentionUIView.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,7 +28,6 @@
 		2C9D785A773076528F7B4542 /* Pods-promiseBeta.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-promiseBeta.debug.xcconfig"; path = "Target Support Files/Pods-promiseBeta/Pods-promiseBeta.debug.xcconfig"; sourceTree = "<group>"; };
 		5F1FEC23419A020410DC0AD6 /* Pods-promiseBeta.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-promiseBeta.release.xcconfig"; path = "Target Support Files/Pods-promiseBeta/Pods-promiseBeta.release.xcconfig"; sourceTree = "<group>"; };
 		7C068BFC22BA34E000199A5B /* Email.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Email.swift; sourceTree = "<group>"; };
-		7C2E7F0422AF7EFA00409DF1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		7C60ABC622BCA571009BFF85 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		7C9A23D522BF1D0D00C5C234 /* move.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = move.mp3; sourceTree = "<group>"; };
 		7CAB061822AF7E1E00AD5179 /* promiseBeta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = promiseBeta.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,6 +40,8 @@
 		7CBCE80122B0DD29008C44FD /* SignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignViewController.swift; sourceTree = "<group>"; };
 		7CBCE80322B0DD51008C44FD /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		CE75B33122BB3AB0003FCF90 /* sendPDFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sendPDFViewController.swift; sourceTree = "<group>"; };
+		CEAC7A5822D89CD80010EEC5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CEAC7A5A22D8A4330010EEC5 /* loginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
 		CECA807C22B1F8CF0032C788 /* extentionUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extentionUIView.swift; sourceTree = "<group>"; };
 		E58D08C18C5344CF9359C99D /* Pods_promiseBeta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_promiseBeta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -96,10 +98,11 @@
 				7C60ABC622BCA571009BFF85 /* IntroViewController.swift */,
 				7CAB062222AF7E1E00AD5179 /* Assets.xcassets */,
 				7CAB061F22AF7E1E00AD5179 /* Main.storyboard */,
+				CEAC7A5822D89CD80010EEC5 /* GoogleService-Info.plist */,
 				7CAB062422AF7E1E00AD5179 /* LaunchScreen.storyboard */,
 				CECA807C22B1F8CF0032C788 /* extentionUIView.swift */,
+				CEAC7A5A22D8A4330010EEC5 /* loginViewController.swift */,
 				7CAB062722AF7E1E00AD5179 /* Info.plist */,
-				7C2E7F0422AF7EFA00409DF1 /* GoogleService-Info.plist */,
 			);
 			path = promiseBeta;
 			sourceTree = "<group>";
@@ -124,6 +127,7 @@
 				7CAB061522AF7E1E00AD5179 /* Frameworks */,
 				7CAB061622AF7E1E00AD5179 /* Resources */,
 				FDD90D78A50E8FDA1B680D48 /* [CP] Embed Pods Frameworks */,
+				DF9EC468BB7FAFFA6BFCDBF1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -174,7 +178,7 @@
 			files = (
 				7CAB062622AF7E1E00AD5179 /* LaunchScreen.storyboard in Resources */,
 				7C9A23D622BF1D0D00C5C234 /* move.mp3 in Resources */,
-				7C2E7F0522AF7EFA00409DF1 /* GoogleService-Info.plist in Resources */,
+				CEAC7A5922D89CD80010EEC5 /* GoogleService-Info.plist in Resources */,
 				7CAB062322AF7E1E00AD5179 /* Assets.xcassets in Resources */,
 				7CAB062122AF7E1E00AD5179 /* Main.storyboard in Resources */,
 			);
@@ -203,6 +207,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DF9EC468BB7FAFFA6BFCDBF1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-promiseBeta/Pods-promiseBeta-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-promiseBeta/Pods-promiseBeta-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-promiseBeta/Pods-promiseBeta-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FDD90D78A50E8FDA1B680D48 /* [CP] Embed Pods Frameworks */ = {
@@ -237,6 +258,7 @@
 				7CBCE80422B0DD51008C44FD /* ListViewController.swift in Sources */,
 				7CAB061C22AF7E1E00AD5179 /* AppDelegate.swift in Sources */,
 				7C60ABC722BCA571009BFF85 /* IntroViewController.swift in Sources */,
+				CEAC7A5B22D8A4330010EEC5 /* loginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +339,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -371,6 +394,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";

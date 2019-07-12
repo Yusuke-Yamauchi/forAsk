@@ -9,5 +9,9 @@ target 'promiseBeta' do
   pod 'Firebase/Core'
   pod 'Sketch'
   pod 'PDFGenerator', '~> 3.0'
+  pod 'Firebase/Database'
+  pod 'Firebase/Auth'
+  pod 'GoogleSignIn'
+  pod 'FirebaseUI'
 
 end
