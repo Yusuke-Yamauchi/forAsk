@@ -14,6 +14,7 @@ class loginViewController: UIViewController ,FUIAuthDelegate{
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.authUI.delegate = self
         self.authUI.providers = providers
       //  AuthButton.addTarget(self,action: #selector(self.AuthButtonTapped(sender:)),for: .touchUpInside)

@@ -42,6 +42,7 @@
 		CE75B33122BB3AB0003FCF90 /* sendPDFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sendPDFViewController.swift; sourceTree = "<group>"; };
 		CEAC7A5822D89CD80010EEC5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CEAC7A5A22D8A4330010EEC5 /* loginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
+		CEAC7A5F22DF7BDB0010EEC5 /* promiseBeta.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = promiseBeta.entitlements; sourceTree = "<group>"; };
 		CECA807C22B1F8CF0032C788 /* extentionUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extentionUIView.swift; sourceTree = "<group>"; };
 		E58D08C18C5344CF9359C99D /* Pods_promiseBeta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_promiseBeta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -88,6 +89,7 @@
 		7CAB061A22AF7E1E00AD5179 /* promiseBeta */ = {
 			isa = PBXGroup;
 			children = (
+				CEAC7A5F22DF7BDB0010EEC5 /* promiseBeta.entitlements */,
 				7C9A23D522BF1D0D00C5C234 /* move.mp3 */,
 				7CAB061B22AF7E1E00AD5179 /* AppDelegate.swift */,
 				7CBCE7FD22B0B4EB008C44FD /* ViewController.swift */,
@@ -150,6 +152,11 @@
 				TargetAttributes = {
 					7CAB061722AF7E1E00AD5179 = {
 						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -407,6 +414,7 @@
 			baseConfigurationReference = 2C9D785A773076528F7B4542 /* Pods-promiseBeta.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = promiseBeta/promiseBeta.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KPNSZCSY2F;
@@ -428,6 +436,7 @@
 			baseConfigurationReference = 5F1FEC23419A020410DC0AD6 /* Pods-promiseBeta.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = promiseBeta/promiseBeta.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KPNSZCSY2F;
